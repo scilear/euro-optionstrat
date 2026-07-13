@@ -1,0 +1,75 @@
+{
+  "template_id": "FlyO-Any",
+  "template_name": "FlyO-Any",
+  "ticker": "",
+  "currency": "USD",
+  "multiplier": 100.0,
+  "strike_mode": "pct",
+  "underlying_scope": "any",
+  "saved_spot": 2927.968017578125,
+  "selected_dte": 6,
+  "range_pct": 5.0,
+  "iv_shift_pct": 0,
+  "spot_shift_pct": 0,
+  "vol_mode": "sticky_delta",
+  "date_offset": 3.0,
+  "created_at_utc": "2026-06-02T16:34:18Z",
+  "updated_at_utc": "2026-06-02T16:34:18Z",
+  "legs": [
+    {
+      "id": "1780147523631.806",
+      "side": "buy",
+      "qty": 1,
+      "right": "C",
+      "expiry_dte": 6,
+      "strike_offset": 0.41093285000521557,
+      "entry": 21.55,
+      "iv": 0.17383672589436172,
+      "delta": 0.4459204297800109
+    },
+    {
+      "id": "1780147561355.832",
+      "side": "sell",
+      "qty": 2,
+      "right": "C",
+      "expiry_dte": 6,
+      "strike_offset": 2.118601776025712,
+      "entry": 6.25,
+      "iv": 0.1705825450126081,
+      "delta": 0.1813962547200212
+    },
+    {
+      "id": "1780147578980.9597",
+      "side": "buy",
+      "qty": 1,
+      "right": "C",
+      "expiry_dte": 6,
+      "strike_offset": 4.167804487250309,
+      "entry": 0.9,
+      "iv": 0.1717651706442237,
+      "delta": 0.035473057748988235
+    },
+    {
+      "id": "1780147621855.5186",
+      "side": "sell",
+      "qty": 1,
+      "right": "P",
+      "expiry_dte": 6,
+      "strike_offset": -0.2721347204029832,
+      "entry": 24.2,
+      "iv": 0.19458953055366873,
+      "delta": -0.4385506562574636
+    },
+    {
+      "id": "1780147632956.563",
+      "side": "buy",
+      "qty": 1,
+      "right": "P",
+      "expiry_dte": 6,
+      "strike_offset": -0.6136685056070825,
+      "entry": 20.75,
+      "iv": 0.19988537182882427,
+      "delta": -0.38779223763865034
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "trade_id": "IWM_FLY_20260608",
+  "trade_name": "IWM_FLY_20260608",
+  "ticker": "IWM",
+  "currency": "USD",
+  "multiplier": 100.0,
+  "selected_expiry": "2026-06-19",
+  "range_pct": 5.0,
+  "iv_shift_pct": 0,
+  "spot_shift_pct": 0,
+  "vol_mode": "sticky_delta",
+  "date_offset": 3.0,
+  "created_at_utc": "2026-06-09T18:04:25Z",
+  "updated_at_utc": "2026-06-15T12:23:07Z",
+  "opened_at_utc": "2026-06-09T18:04:25Z",
+  "opening_net_cost": 115.50000000000003,
+  "legs": [
+    {
+      "id": "1780077610058.9575",
+      "side": "sell",
+      "qty": 1,
+      "right": "P",
+      "expiry": "2026-06-15",
+      "strike": 282.0,
+      "entry": 4.3149999999999995,
+      "iv": 0.35305316971540446,
+      "delta": -0.43938347263051103
+    },
+    {
+      "id": "1780077617892.1697",
+      "side": "buy",
+      "qty": 1,
+      "right": "P",
+      "expiry": "2026-06-22",
+      "strike": 281.0,
+      "entry": 5.46,
+      "iv": 0.3185292108267546,
+      "delta": -0.4230442586937284
+    },
+    {
+      "id": "1780077881347.065",
+      "side": "sell",
+      "qty": 2,
+      "right": "C",
+      "expiry": "2026-06-15",
+      "strike": 290.0,
+      "entry": 0.94,
+      "iv": 0.2143370112270117,
+      "delta": 0.21469399074330725
+    },
+    {
+      "id": "1780077919318.143",
+      "side": "buy",
+      "qty": 1,
+      "right": "C",
+      "expiry": "2026-06-15",
+      "strike": 288.0,
+      "entry": 1.4449999999999998,
+      "iv": 0.21555500778257852,
+      "delta": 0.2962518638154922
+    },
+    {
+      "id": "1780077929105.0256",
+      "side": "buy",
+      "qty": 1,
+      "right": "C",
+      "expiry": "2026-06-15",
+      "strike": 293.0,
+      "entry": 0.44499999999999995,
+      "iv": 0.21172801909446717,
+      "delta": 0.11911238610033176
+    }
+  ],
+  "pnl_history": [
+    {
+      "timestamp_utc": "2026-06-09T18:04:25Z",
+      "pnl_mark_to_close": 0.0,
+      "spot": 286.8,
+      "source": "opened",
+      "selected_expiry": "2026-06-19"
+    },
+    {
+      "timestamp_utc": "2026-06-12T14:08:59.448Z",
+      "pnl_mark_to_close": -33.50000000000003,
+      "spot": 292.239990234375,
+      "source": "load_trade",
+      "selected_expiry": "2026-06-19"
+    },
+    {
+      "timestamp_utc": "2026-06-15T08:09:22.962Z",
+      "pnl_mark_to_close": -9.499999999999972,
+      "spot": 292.95001220703125,
+      "source": "load_trade",
+      "selected_expiry": "2026-06-19"
+    },
+    {
+      "timestamp_utc": "2026-06-15T12:23:07.665Z",
+      "pnl_mark_to_close": -9.499999999999972,
+      "spot": 292.95001220703125,
+      "source": "load_trade",
+      "selected_expiry": "2026-06-19"
+    }
+  ]
+}

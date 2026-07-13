@@ -1,0 +1,124 @@
+{
+  "trade_id": "NKE_EARNINGS-LIZARD-20260617",
+  "trade_name": "NKE_EARNINGS LIZARD 20260617",
+  "ticker": "NKE",
+  "currency": "USD",
+  "multiplier": 100.0,
+  "selected_expiry": "2026-06-19",
+  "range_pct": 28.0,
+  "iv_shift_pct": -3.0,
+  "spot_shift_pct": -0.5,
+  "vol_mode": "sticky_delta",
+  "date_offset": 16.0,
+  "created_at_utc": "2026-06-17T15:06:44Z",
+  "updated_at_utc": "2026-07-13T12:41:52Z",
+  "opened_at_utc": "2026-06-17T15:06:44Z",
+  "opening_net_cost": -71.0,
+  "legs": [
+    {
+      "id": "1781708136516.0044",
+      "side": "sell",
+      "qty": 2,
+      "right": "P",
+      "expiry": "2026-07-17",
+      "strike": 45.0,
+      "entry": 2.5300000000000002,
+      "iv": 0.5350189345479013,
+      "delta": -0.443063835297958
+    },
+    {
+      "id": "1781708149788.4155",
+      "side": "buy",
+      "qty": 1,
+      "right": "P",
+      "expiry": "2026-07-17",
+      "strike": 47.5,
+      "entry": 4.025,
+      "iv": 0.5439081934809686,
+      "delta": -0.5825022491216171
+    },
+    {
+      "id": "1781708158635.1372",
+      "side": "buy",
+      "qty": 1,
+      "right": "P",
+      "expiry": "2026-07-17",
+      "strike": 40.0,
+      "entry": 0.74,
+      "iv": 0.5345146893382071,
+      "delta": -0.18226568727747594
+    }
+  ],
+  "pnl_history": [
+    {
+      "timestamp_utc": "2026-06-17T15:06:44Z",
+      "pnl_mark_to_close": 0.0,
+      "spot": 45.26,
+      "source": "opened",
+      "selected_expiry": "2026-07-17"
+    },
+    {
+      "timestamp_utc": "2026-06-17T15:06:44.642Z",
+      "pnl_mark_to_close": 20.0,
+      "spot": 45.26,
+      "source": "save_trade",
+      "selected_expiry": "2026-07-17"
+    },
+    {
+      "timestamp_utc": "2026-06-17T15:13:08.772Z",
+      "pnl_mark_to_close": -23.0,
+      "spot": 45.24,
+      "source": "save_trade",
+      "selected_expiry": "2026-06-19"
+    },
+    {
+      "timestamp_utc": "2026-06-17T15:31:42.199Z",
+      "pnl_mark_to_close": -23.0,
+      "spot": 45.35499954223633,
+      "source": "load_trade",
+      "selected_expiry": "2026-06-19"
+    },
+    {
+      "timestamp_utc": "2026-07-13T12:31:59.779Z",
+      "pnl_mark_to_close": -154.99999999999997,
+      "spot": 44.369998931884766,
+      "source": "load_trade",
+      "selected_expiry": "2026-06-19"
+    },
+    {
+      "timestamp_utc": "2026-07-13T12:37:26.318Z",
+      "pnl_mark_to_close": 1484.0,
+      "spot": 295.989990234375,
+      "source": "expiry_change",
+      "selected_expiry": "2026-08-21"
+    },
+    {
+      "timestamp_utc": "2026-07-13T12:37:43.105Z",
+      "pnl_mark_to_close": 985.0,
+      "spot": 295.989990234375,
+      "source": "expiry_change",
+      "selected_expiry": "2026-08-14"
+    },
+    {
+      "timestamp_utc": "2026-07-13T12:38:03.065Z",
+      "pnl_mark_to_close": 467.0,
+      "spot": 295.989990234375,
+      "source": "expiry_change",
+      "selected_expiry": "2026-08-21"
+    },
+    {
+      "timestamp_utc": "2026-07-13T12:41:30.828Z",
+      "pnl_mark_to_close": 16029.0,
+      "spot": 2977.81005859375,
+      "source": "expiry_change",
+      "selected_expiry": "2026-08-13"
+    },
+    {
+      "timestamp_utc": "2026-07-13T12:41:52.490Z",
+      "pnl_mark_to_close": -18931.0,
+      "spot": 2977.81005859375,
+      "source": "expiry_change",
+      "selected_expiry": "2026-08-06"
+    }
+  ]
+}

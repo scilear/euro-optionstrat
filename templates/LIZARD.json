@@ -1,0 +1,53 @@
+{
+  "template_id": "LIZARD",
+  "template_name": "LIZARD",
+  "ticker": "",
+  "currency": "USD",
+  "multiplier": 100.0,
+  "strike_mode": "delta",
+  "underlying_scope": "any",
+  "saved_spot": 45.24,
+  "selected_dte": 0,
+  "range_pct": 28.0,
+  "iv_shift_pct": -3.0,
+  "spot_shift_pct": -0.5,
+  "vol_mode": "sticky_delta",
+  "date_offset": 16.0,
+  "created_at_utc": "2026-06-17T15:07:00Z",
+  "updated_at_utc": "2026-06-17T15:13:11Z",
+  "legs": [
+    {
+      "id": "1781708136516.0044",
+      "side": "sell",
+      "qty": 2,
+      "right": "P",
+      "expiry_dte": 0,
+      "strike_offset": -0.240000000000002,
+      "entry": 2.5300000000000002,
+      "iv": 0.5350189345479013,
+      "delta": -0.443063835297958
+    },
+    {
+      "id": "1781708149788.4155",
+      "side": "buy",
+      "qty": 1,
+      "right": "P",
+      "expiry_dte": 0,
+      "strike_offset": 2.259999999999998,
+      "entry": 4.025,
+      "iv": 0.5439081934809686,
+      "delta": -0.5825022491216171
+    },
+    {
+      "id": "1781708158635.1372",
+      "side": "buy",
+      "qty": 1,
+      "right": "P",
+      "expiry_dte": 0,
+      "strike_offset": -5.240000000000002,
+      "entry": 0.74,
+      "iv": 0.5345146893382071,
+      "delta": -0.18226568727747594
+    }
+  ]
+}

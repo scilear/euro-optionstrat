@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Euro Option Strategy Builder</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="mark"></span>
+        <div>
+          <h1>Euro Option Strategy Builder</h1>
+          <div class="brand-meta">
+            <span id="dataBadge" class="data-badge unknown">No Data</span>
+            <p id="chainMeta">Load an index chain to start building.</p>
+          </div>
+        </div>
+      </div>
+      <div class="toolbar">
+        <label class="field">
+          <span>Index</span>
+          <select id="indexSelect"></select>
+        </label>
+        <label class="field ticker-field">
+          <span>Ticker Search</span>
+          <input
+            id="tickerInput"
+            autocomplete="off"
+            list="tickerSuggestions"
+            placeholder="Index or stock ticker"
+          />
+        </label>
+        <label class="field recent-field">
+          <span>Recent</span>
+          <select id="recentTickerSelect"></select>
+        </label>
+        <datalist id="tickerSuggestions"></datalist>
+        <label class="field small-field">
+          <span>Multiplier</span>
+          <input id="multiplierInput" type="number" min="1" value="10" />
+        </label>
+        <label class="check">
+          <input id="noIbToggle" type="checkbox" />
+          <span>No IB</span>
+        </label>
+        <label class="check">
+          <input id="mockToggle" type="checkbox" />
+          <span>Sample</span>
+        </label>
+        <button id="loadTickerButton" class="ghost">Load Ticker</button>
+        <button id="refreshButton" class="primary">Refresh</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="builder-panel">
+        <div class="section-title">
+          <h2>Expiries</h2>
+          <span id="expiryStatus"></span>
+        </div>
+        <div id="expiryStrip" class="expiry-strip"></div>
+
+        <div class="section-title">
+          <h2>Strikes</h2>
+          <span>Drag legs on the rail. Right-click a leg for maturities.</span>
+        </div>
+        <div id="strikeRail" class="strike-rail"></div>
+
+        <div class="stats-grid">
+          <div>
+            <span>Net</span>
+            <strong id="netCost">-</strong>
+          </div>
+          <div>
+            <span>Max Loss</span>
+            <strong id="maxLoss">-</strong>
+          </div>
+          <div>
+            <span>Max Profit</span>
+            <strong id="maxProfit">-</strong>
+          </div>
+          <div>
+            <span>Breakevens</span>
+            <strong id="breakevens">-</strong>
+          </div>
+          <div>
+            <span>Combo Delta</span>
+            <strong id="comboDelta">-</strong>
+          </div>
+          <div>
+            <span>Combo Gamma</span>
+            <strong id="comboGamma">-</strong>
+          </div>
+          <div>
+            <span>Combo Vega / 1 vol pt</span>
+            <strong id="comboVega">-</strong>
+          </div>
+          <div>
+            <span>Combo Theta / day</span>
+            <strong id="comboTheta">-</strong>
+          </div>
+        </div>
+
+        <div class="chart-wrap">
+          <canvas id="plChart" width="1200" height="520"></canvas>
+          <div id="chartLoadingOverlay" class="chart-loading-overlay hidden" aria-hidden="true">
+            <div class="chart-loader-spinner" aria-hidden="true"></div>
+            <p id="chartLoadingText" class="chart-loader-text">Loading pricing data...</p>
+            <p class="chart-loader-subtext">Graph and related controls are temporarily locked.</p>
+          </div>
+        </div>
+
+        <div class="slider-grid">
+          <label class="slider-field">
+            <span>Date <strong id="dateLabel"></strong></span>
+            <input id="dateSlider" type="range" min="0" max="1" value="0" />
+          </label>
+          <label class="slider-field">
+            <span>Range <strong id="rangeLabel"></strong></span>
+            <input id="rangeSlider" type="range" min="3" max="30" value="12" />
+          </label>
+          <label class="slider-field">
+            <span>IV Shift <strong id="ivLabel"></strong></span>
+            <input id="ivSlider" type="range" min="-20" max="20" value="0" />
+          </label>
+          <label class="slider-field">
+            <span>Spot Shift <strong id="spotLabel"></strong></span>
+            <input id="spotSlider" type="range" min="-20" max="20" step="0.5" value="0" />
+          </label>
+          <label class="slider-field">
+            <span>Vol Model</span>
+            <select id="volModeSelect">
+              <option value="parallel">Parallel Shift</option>
+              <option value="sticky_strike">Sticky Strike</option>
+              <option value="sticky_delta">Sticky Delta</option>
+            </select>
+          </label>
+        </div>
+      </section>
+
+      <aside class="side-panel">
+        <section>
+          <div class="section-title">
+            <h2>Saved Trades</h2>
+            <span id="saveStatus">-</span>
+          </div>
+          <div class="save-grid">
+            <input id="tradeNameInput" placeholder="Trade name" autocomplete="off" />
+            <button id="saveTradeButton" class="primary">Save</button>
+            <select id="savedTradeSelect"></select>
+            <button id="loadTradeButton" class="ghost">Load</button>
+          </div>
+        </section>
+
+        <section>
+          <div class="section-title">
+            <h2>Saved Templates</h2>
+            <span id="templateStatus">-</span>
+          </div>
+          <div class="save-grid">
+            <input id="templateNameInput" placeholder="Template name" autocomplete="off" />
+            <button id="saveTemplateButton" class="primary">Save</button>
+            <select id="templateStrikeModeSelect" title="Strike offset/delta mode">
+              <option value="pts">Mode: Points</option>
+              <option value="pct">Mode: Percent</option>
+              <option value="delta">Mode: Delta</option>
+            </select>
+            <select id="templateScopeSelect" title="Underlying scope">
+              <option value="ticker">Scope: Current ticker</option>
+              <option value="any">Scope: Any underlying</option>
+            </select>
+            <select id="savedTemplateSelect"></select>
+            <button id="loadTemplateButton" class="ghost">Load</button>
+          </div>
+        </section>
+
+        <section>
+          <div class="section-title">
+            <h2>Positions</h2>
+            <button id="ibPricesButton" class="ghost" title="Fetch live bid/ask/Greeks from IB for selected legs">IB</button>
+            <button id="clearButton" class="ghost">Clear</button>
+          </div>
+          <div id="legsTable" class="legs-table empty">No contracts yet.</div>
+        </section>
+
+        <section id="simulationPanel" class="sim-panel sim-hidden">
+          <div class="section-title">
+            <h2>Simulation</h2>
+            <span>Monte Carlo P&L forecast</span>
+          </div>
+          <div class="sim-controls">
+            <label>
+              Paths
+              <input id="simPathsSlider" type="range" min="1000" max="100000" step="1000" value="10000" />
+              <strong id="simPathsLabel">10,000</strong>
+            </label>
+            <label>
+              Horizon
+              <input id="simHorizonInput" type="number" min="1" max="365" value="60" class="sim-horizon-input" />
+              <span>d</span>
+            </label>
+            <div class="sim-tp-sl-group">
+              <div class="sim-mode-select">
+                <button id="simModePct" class="sim-mode-btn active">%</button>
+                <button id="simModeDol" class="sim-mode-btn">$</button>
+              </div>
+              <label class="sim-tp-sl-label">
+                <span>TP</span>
+                <input id="simTpInput" type="number" placeholder="%" class="sim-tp-input" />
+              </label>
+              <label class="sim-tp-sl-label">
+                <span>SL</span>
+                <input id="simSlInput" type="number" placeholder="%" class="sim-sl-input" />
+              </label>
+            </div>
+            <button id="simButton" class="primary">Run Simulation</button>
+          </div>
+          <div id="simStatus" class="sim-status">Configure a strategy to run simulation.</div>
+          <div id="simResults" class="sim-hidden">
+            <canvas id="simHistCanvas" class="sim-histogram"></canvas>
+            <div class="sim-stats-grid">
+              <div class="sim-stat"><span class="sim-stat-label">Mean</span><span id="simResultMean" class="sim-stat-value">-</span></div>
+              <div class="sim-stat"><span class="sim-stat-label">Median</span><span id="simResultMedian" class="sim-stat-value">-</span></div>
+              <div class="sim-stat"><span class="sim-stat-label">Std Dev</span><span id="simResultStd" class="sim-stat-value">-</span></div>
+              <div class="sim-stat"><span class="sim-stat-label">VaR 95%</span><span id="simResultVar95" class="sim-stat-value">-</span></div>
+              <div class="sim-stat"><span class="sim-stat-label">CVaR 95%</span><span id="simResultCvar95" class="sim-stat-value">-</span></div>
+              <div class="sim-stat"><span class="sim-stat-label">Profit Prob</span><span id="simResultProfitProb" class="sim-stat-value">-</span></div>
+              <div class="sim-stat"><span class="sim-stat-label">Best</span><span id="simResultMaxProfit" class="sim-stat-value">-</span></div>
+              <div class="sim-stat"><span class="sim-stat-label">Worst</span><span id="simResultMaxLoss" class="sim-stat-value">-</span></div>
+              <div class="sim-stat"><span class="sim-stat-label">Skew</span><span id="simResultSkew" class="sim-stat-value">-</span></div>
+              <div class="sim-stat"><span class="sim-stat-label">Max DD</span><span id="simResultMaxDD" class="sim-stat-value">-</span></div>
+              <div class="sim-stat"><span class="sim-stat-label">Touch Up</span><span id="simResultTouchUp" class="sim-stat-value">-</span></div>
+              <div class="sim-stat"><span class="sim-stat-label">Touch Dn</span><span id="simResultTouchDown" class="sim-stat-value">-</span></div>
+              <div id="simResultTpSlRow" class="sim-tp-sl-row sim-hidden">
+                <div class="sim-stat"><span class="sim-stat-label">TP Hit</span><span id="simResultTpProb" class="sim-stat-value">-</span></div>
+                <div class="sim-stat"><span class="sim-stat-label">SL Hit</span><span id="simResultSlProb" class="sim-stat-value">-</span></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="section-title">
+            <h2>Chain</h2>
+            <span id="chainStatus">-</span>
+          </div>
+          <div class="chain-header">
+            <span>Calls</span>
+            <span>Strike</span>
+            <span>Puts</span>
+          </div>
+          <div id="chainTable" class="chain-table"></div>
+        </section>
+      </aside>
+    </main>
+
+    <div id="contextMenu" class="context-menu hidden"></div>
+    <div id="toast" class="toast hidden"></div>
+
+    <script src="/js/state.js"></script>
+    <script src="/js/utils.js"></script>
+    <script src="/js/pricing.js"></script>
+    <script src="/js/api.js"></script>
+    <script src="/js/vol-models.js"></script>
+    <script src="/js/chart.js"></script>
+    <script src="/js/ui-controls.js"></script>
+    <script src="/js/simulation-ui.js"></script>
+    <script src="/js/templates-trades.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>

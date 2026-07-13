@@ -1,0 +1,75 @@
+{
+  "template_id": "FlyO",
+  "template_name": "FlyO",
+  "ticker": "RUT",
+  "currency": "USD",
+  "multiplier": 100.0,
+  "strike_mode": "pts",
+  "underlying_scope": "ticker",
+  "saved_spot": 2919.340087890625,
+  "selected_dte": 6,
+  "range_pct": 5.0,
+  "iv_shift_pct": 0,
+  "spot_shift_pct": 0,
+  "vol_mode": "parallel",
+  "date_offset": 3.0,
+  "created_at_utc": "2026-05-30T13:29:55Z",
+  "updated_at_utc": "2026-05-30T13:30:05Z",
+  "legs": [
+    {
+      "id": "1780147523631.806",
+      "side": "buy",
+      "qty": 1,
+      "right": "C",
+      "expiry_dte": 6,
+      "strike_offset": 10.659912109375,
+      "entry": 24.450000000000003,
+      "iv": 0.18983314709048718,
+      "delta": 0.4586584768308602
+    },
+    {
+      "id": "1780147561355.832",
+      "side": "sell",
+      "qty": 2,
+      "right": "C",
+      "expiry_dte": 6,
+      "strike_offset": 60.659912109375,
+      "entry": 7.9,
+      "iv": 0.1846572111986577,
+      "delta": 0.20550919468825418
+    },
+    {
+      "id": "1780147578980.9597",
+      "side": "buy",
+      "qty": 1,
+      "right": "C",
+      "expiry_dte": 6,
+      "strike_offset": 120.659912109375,
+      "entry": 1.425,
+      "iv": 0.18619479401707645,
+      "delta": 0.04945630881844487
+    },
+    {
+      "id": "1780147621855.5186",
+      "side": "sell",
+      "qty": 1,
+      "right": "P",
+      "expiry_dte": 6,
+      "strike_offset": -9.340087890625,
+      "entry": 25.9,
+      "iv": 0.2108313875922934,
+      "delta": -0.43546756686189814
+    },
+    {
+      "id": "1780147632956.563",
+      "side": "buy",
+      "qty": 1,
+      "right": "P",
+      "expiry_dte": 6,
+      "strike_offset": -19.340087890625,
+      "entry": 22.1,
+      "iv": 0.2136800321698189,
+      "delta": -0.38731757814710177
+    }
+  ]
+}

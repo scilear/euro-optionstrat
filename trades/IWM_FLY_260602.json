@@ -1,0 +1,90 @@
+{
+  "trade_id": "IWM_FLY_260602",
+  "trade_name": "IWM_FLY_260602",
+  "ticker": "IWM",
+  "currency": "USD",
+  "multiplier": 100.0,
+  "selected_expiry": "2026-06-09",
+  "range_pct": 5.0,
+  "iv_shift_pct": 0,
+  "spot_shift_pct": 0,
+  "vol_mode": "sticky_delta",
+  "date_offset": 3.0,
+  "created_at_utc": "2026-06-03T08:00:09Z",
+  "updated_at_utc": "2026-06-03T08:00:09Z",
+  "opened_at_utc": "2026-06-03T08:00:09Z",
+  "opening_net_cost": 115.0,
+  "legs": [
+    {
+      "id": "1780147523631.806",
+      "side": "buy",
+      "qty": 1,
+      "right": "C",
+      "expiry": "2026-06-09",
+      "strike": 295.0,
+      "entry": 1.55,
+      "iv": 0.19113860239982605,
+      "delta": 0.33766368205414865
+    },
+    {
+      "id": "1780147561355.832",
+      "side": "sell",
+      "qty": 2,
+      "right": "C",
+      "expiry": "2026-06-09",
+      "strike": 297.0,
+      "entry": 0.94,
+      "iv": 0.18440311422944067,
+      "delta": 0.23551230223323044
+    },
+    {
+      "id": "1780147578980.9597",
+      "side": "buy",
+      "qty": 1,
+      "right": "C",
+      "expiry": "2026-06-09",
+      "strike": 302.0,
+      "entry": 0.25,
+      "iv": 0.18514368712902066,
+      "delta": 0.07763769598174936
+    },
+    {
+      "id": "1780147621855.5186",
+      "side": "sell",
+      "qty": 1,
+      "right": "P",
+      "expiry": "2026-06-09",
+      "strike": 287.0,
+      "entry": 1.40,
+      "iv": 0.21874334547519686,
+      "delta": -0.26841015909136345
+    },
+    {
+      "id": "1780147632956.563",
+      "side": "buy",
+      "qty": 1,
+      "right": "P",
+      "expiry": "2026-06-18",
+      "strike": 286.0,
+      "entry": 2.68,
+      "iv": 0.2502883237987757,
+      "delta": -0.3255987774679501
+    }
+  ],
+  "pnl_history": [
+    {
+      "timestamp_utc": "2026-06-03T08:00:09Z",
+      "pnl_mark_to_close": 0.0,
+      "spot": 291.6600036621094,
+      "source": "opened",
+      "selected_expiry": "2026-06-09"
+    },
+    {
+      "timestamp_utc": "2026-06-03T08:00:09.188Z",
+      "pnl_mark_to_close": 0.0,
+      "spot": 291.6600036621094,
+      "source": "save_trade",
+      "selected_expiry": "2026-06-09"
+    }
+  ]
+}

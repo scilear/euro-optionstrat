@@ -1,0 +1,95 @@
+{
+  "trade_id": "TEST1",
+  "trade_name": "TEST1",
+  "ticker": "SPX",
+  "currency": "USD",
+  "multiplier": 100.0,
+  "selected_expiry": "2026-06-19",
+  "range_pct": 5.0,
+  "iv_shift_pct": 0,
+  "spot_shift_pct": 0,
+  "vol_mode": "sticky_delta",
+  "date_offset": 0,
+  "created_at_utc": "2026-06-09T19:26:56Z",
+  "updated_at_utc": "2026-06-09T20:05:55Z",
+  "opened_at_utc": "2026-06-09T19:26:56Z",
+  "opening_net_cost": -16825.0,
+  "legs": [
+    {
+      "id": "1781033454424.7668",
+      "side": "buy",
+      "qty": 1,
+      "right": "C",
+      "expiry": "2026-06-18",
+      "strike": 7340.0,
+      "entry": 102.55,
+      "iv": 0.21280217575524005,
+      "delta": 0.5219261946636027
+    }
+  ],
+  "pnl_history": [
+    {
+      "timestamp_utc": "2026-06-09T19:26:56Z",
+      "pnl_mark_to_close": 0.0,
+      "spot": 7383.759765625,
+      "source": "opened",
+      "selected_expiry": "2026-06-19"
+    },
+    {
+      "timestamp_utc": "2026-06-09T19:27:09.336Z",
+      "pnl_mark_to_close": 65.0,
+      "spot": 7370.31982421875,
+      "source": "load_trade",
+      "selected_expiry": "2026-06-19"
+    },
+    {
+      "timestamp_utc": "2026-06-09T19:36:47.207Z",
+      "pnl_mark_to_close": -19355.0,
+      "spot": 7354.39990234375,
+      "source": "load_trade",
+      "selected_expiry": "2026-06-19"
+    },
+    {
+      "timestamp_utc": "2026-06-09T19:37:59.351Z",
+      "pnl_mark_to_close": -19355.0,
+      "spot": 7354.39990234375,
+      "source": "load_trade",
+      "selected_expiry": "2026-06-19"
+    },
+    {
+      "timestamp_utc": "2026-06-09T19:56:34.528Z",
+      "pnl_mark_to_close": -18895.0,
+      "spot": 7343.2900390625,
+      "source": "load_trade",
+      "selected_expiry": "2026-06-19"
+    },
+    {
+      "timestamp_utc": "2026-06-09T20:03:58.913Z",
+      "pnl_mark_to_close": -18905.0,
+      "spot": 7340.33984375,
+      "source": "load_trade",
+      "selected_expiry": "2026-06-19"
+    },
+    {
+      "timestamp_utc": "2026-06-09T20:04:45.088Z",
+      "pnl_mark_to_close": -22305.0,
+      "spot": 7340.33984375,
+      "source": "save_trade",
+      "selected_expiry": "2026-06-19"
+    },
+    {
+      "timestamp_utc": "2026-06-09T20:05:10.593Z",
+      "pnl_mark_to_close": -22305.0,
+      "spot": 7340.33984375,
+      "source": "load_trade",
+      "selected_expiry": "2026-06-19"
+    },
+    {
+      "timestamp_utc": "2026-06-09T20:05:54.953Z",
+      "pnl_mark_to_close": -27055.0,
+      "spot": 7340.33984375,
+      "source": "save_trade",
+      "selected_expiry": "2026-06-19"
+    }
+  ]
+}

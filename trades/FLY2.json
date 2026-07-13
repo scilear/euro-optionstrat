@@ -1,0 +1,83 @@
+{
+  "trade_id": "FLY2",
+  "trade_name": "FLY2",
+  "ticker": "RUT",
+  "currency": "USD",
+  "multiplier": 100.0,
+  "selected_expiry": "2026-06-12",
+  "range_pct": 5.0,
+  "iv_shift_pct": 0,
+  "spot_shift_pct": 0,
+  "vol_mode": "parallel",
+  "date_offset": 6.0,
+  "created_at_utc": "2026-05-29T18:41:45Z",
+  "updated_at_utc": "2026-05-29T18:41:45Z",
+  "opened_at_utc": "2026-05-29T18:41:45Z",
+  "opening_net_cost": 1295.0000000000002,
+  "legs": [
+    {
+      "id": "1780077610058.9575",
+      "side": "sell",
+      "qty": 1,
+      "right": "P",
+      "expiry": "2026-06-05",
+      "strike": 2890.0,
+      "entry": 18.5,
+      "iv": 0.1988483928216621,
+      "delta": -0.3405690011967425
+    },
+    {
+      "id": "1780077617892.1697",
+      "side": "buy",
+      "qty": 1,
+      "right": "P",
+      "expiry": "2026-06-12",
+      "strike": 2880.0,
+      "entry": 28.65,
+      "iv": 0.20905858533568683,
+      "delta": -0.3488071771493003
+    },
+    {
+      "id": "1780077881347.065",
+      "side": "sell",
+      "qty": 2,
+      "right": "C",
+      "expiry": "2026-06-05",
+      "strike": 2970.0,
+      "entry": 12.2,
+      "iv": 0.18702492110431196,
+      "delta": 0.2679383892059991
+    },
+    {
+      "id": "1780077919318.143",
+      "side": "buy",
+      "qty": 1,
+      "right": "C",
+      "expiry": "2026-06-05",
+      "strike": 2945.0,
+      "entry": 20.35,
+      "iv": 0.1887464178264141,
+      "delta": 0.3859926160044414
+    },
+    {
+      "id": "1780077929105.0256",
+      "side": "buy",
+      "qty": 1,
+      "right": "C",
+      "expiry": "2026-06-05",
+      "strike": 2995.0,
+      "entry": 6.85,
+      "iv": 0.18621124084480106,
+      "delta": 0.1718370528519465
+    }
+  ],
+  "pnl_history": [
+    {
+      "timestamp_utc": "2026-05-29T18:41:45Z",
+      "pnl_mark_to_close": 0.0,
+      "spot": null,
+      "source": "migrated",
+      "selected_expiry": "2026-06-12"
+    }
+  ]
+}

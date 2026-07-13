@@ -1,0 +1,64 @@
+{
+  "template_id": "DoubleCAL2",
+  "template_name": "DoubleCAL2",
+  "ticker": "",
+  "currency": "EUR",
+  "multiplier": 5.0,
+  "strike_mode": "pct",
+  "underlying_scope": "any",
+  "saved_spot": 24150.0,
+  "selected_dte": 6,
+  "range_pct": 5.0,
+  "iv_shift_pct": 0,
+  "spot_shift_pct": 0,
+  "vol_mode": "parallel",
+  "date_offset": 12.0,
+  "created_at_utc": "2026-05-30T13:16:37Z",
+  "updated_at_utc": "2026-05-30T13:18:33Z",
+  "legs": [
+    {
+      "id": "1780146422182.074",
+      "side": "sell",
+      "qty": 1,
+      "right": "P",
+      "expiry_dte": 13,
+      "strike_offset": -1.8633540372670807,
+      "entry": 155.767,
+      "iv": 0.190083,
+      "delta": -0.283644
+    },
+    {
+      "id": "1780146425872.48",
+      "side": "buy",
+      "qty": 1,
+      "right": "P",
+      "expiry_dte": 20,
+      "strike_offset": -1.8633540372670807,
+      "entry": 227.7497,
+      "iv": 0.192001,
+      "delta": -0.316484
+    },
+    {
+      "id": "1780146428401.8916",
+      "side": "sell",
+      "qty": 1,
+      "right": "C",
+      "expiry_dte": 13,
+      "strike_offset": 1.8633540372670807,
+      "entry": 155.8734,
+      "iv": 0.17704,
+      "delta": 0.307173
+    },
+    {
+      "id": "1780146430483.2087",
+      "side": "buy",
+      "qty": 1,
+      "right": "C",
+      "expiry_dte": 20,
+      "strike_offset": 1.8633540372670807,
+      "entry": 234.5515,
+      "iv": 0.178958,
+      "delta": 0.351775
+    }
+  ]
+}

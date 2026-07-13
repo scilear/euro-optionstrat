@@ -1,0 +1,94 @@
+{
+  "indices": [
+    {
+      "symbol": "SX5E",
+      "name": "Euro Stoxx 50",
+      "currency": "EUR",
+      "multiplier": 10,
+      "option_chain_ticker": "ESTX50",
+      "yahoo_ticker": "^STOXX50E",
+      "aliases": ["ESTX50", "EUROSTOXX", "EUROSTOXX50"],
+      "note": "IB index ticker ESTX50 (EUREX); Yahoo underlying ^STOXX50E"
+    },
+    {
+      "symbol": "DAX",
+      "name": "DAX",
+      "currency": "EUR",
+      "multiplier": 5,
+      "option_chain_ticker": "DAX",
+      "yahoo_ticker": "^GDAXI",
+      "aliases": ["GDAXI"],
+      "note": "IB index ticker DAX (EUREX); Yahoo underlying ^GDAXI"
+    },
+    {
+      "symbol": "CAC40",
+      "name": "CAC 40",
+      "currency": "EUR",
+      "multiplier": 10,
+      "option_chain_ticker": "CAC40",
+      "yahoo_ticker": "^FCHI",
+      "aliases": ["CAC", "FCHI"],
+      "note": "IB index ticker CAC40 (MONEP); Yahoo underlying ^FCHI"
+    },
+    {
+      "symbol": "UKX",
+      "name": "FTSE 100",
+      "currency": "GBP",
+      "multiplier": 10,
+      "option_chain_ticker": "Z",
+      "yahoo_ticker": "^FTSE",
+      "aliases": ["FTSE", "FTSE100", "Z"],
+      "note": "IB index ticker Z (ICEEU); Yahoo underlying ^FTSE"
+    },
+    {
+      "symbol": "SMI",
+      "name": "Swiss Market Index",
+      "currency": "CHF",
+      "multiplier": 10,
+      "option_chain_ticker": "SMI",
+      "yahoo_ticker": "^SSMI",
+      "aliases": ["SSMI"],
+      "note": "IB index ticker SMI (EUREX); Yahoo underlying ^SSMI"
+    },
+    {
+      "symbol": "AEX",
+      "name": "AEX",
+      "currency": "EUR",
+      "multiplier": 100,
+      "option_chain_ticker": "EOE",
+      "yahoo_ticker": "^AEX",
+      "aliases": ["EOE"],
+      "note": "IB index ticker EOE (FTA); Yahoo underlying ^AEX"
+    },
+    {
+      "symbol": "IBEX",
+      "name": "IBEX 35",
+      "currency": "EUR",
+      "multiplier": 10,
+      "option_chain_ticker": "IBEX",
+      "yahoo_ticker": "^IBEX",
+      "aliases": ["IBEX35"],
+      "note": "IB index ticker IBEX (MEFFRV); Yahoo underlying ^IBEX"
+    },
+    {
+      "symbol": "SPX",
+      "name": "S&P 500 Index",
+      "currency": "USD",
+      "multiplier": 100,
+      "option_chain_ticker": "SPX",
+      "yahoo_ticker": "^GSPC",
+      "aliases": ["^SPX", "GSPC", "^GSPC", "SPXW"],
+      "note": "IB index ticker SPX; Yahoo underlying ^GSPC"
+    },
+    {
+      "symbol": "RUT",
+      "name": "Russell 2000 Index",
+      "currency": "USD",
+      "multiplier": 100,
+      "option_chain_ticker": "RUT",
+      "yahoo_ticker": "^RUT",
+      "aliases": ["^RUT", "RUTW"],
+      "note": "IB index ticker RUT; Yahoo underlying ^RUT"
+    }
+  ]
+}

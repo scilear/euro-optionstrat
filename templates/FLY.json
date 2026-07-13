@@ -1,0 +1,75 @@
+{
+  "template_id": "FLY",
+  "template_name": "FLY",
+  "ticker": "",
+  "currency": "EUR",
+  "multiplier": 100.0,
+  "strike_mode": "pct",
+  "underlying_scope": "any",
+  "saved_spot": 759.655029296875,
+  "selected_dte": 10,
+  "range_pct": 5.0,
+  "iv_shift_pct": 0,
+  "spot_shift_pct": 0,
+  "vol_mode": "sticky_delta",
+  "date_offset": 3.0,
+  "created_at_utc": "2026-05-30T13:00:26Z",
+  "updated_at_utc": "2026-06-02T16:11:30Z",
+  "legs": [
+    {
+      "id": "1780077610058.9575",
+      "side": "sell",
+      "qty": 1,
+      "right": "P",
+      "expiry_dte": 7,
+      "strike_offset": -1.0076981000126304,
+      "entry": 2.075,
+      "iv": 0.125394951030612,
+      "delta": -0.25852690018922364
+    },
+    {
+      "id": "1780077617892.1697",
+      "side": "buy",
+      "qty": 1,
+      "right": "P",
+      "expiry_dte": 16,
+      "strike_offset": -1.2709754986828095,
+      "entry": 4.9399999999999995,
+      "iv": 0.15162937347665428,
+      "delta": -0.3126157062649616
+    },
+    {
+      "id": "1780077881347.065",
+      "side": "sell",
+      "qty": 2,
+      "right": "C",
+      "expiry_dte": 7,
+      "strike_offset": 1.7567145860242508,
+      "entry": 0.475,
+      "iv": 0.09316900326013564,
+      "delta": 0.10241263393215067
+    },
+    {
+      "id": "1780077919318.143",
+      "side": "buy",
+      "qty": 1,
+      "right": "C",
+      "expiry_dte": 7,
+      "strike_offset": 0.9668823900137135,
+      "entry": 1.78,
+      "iv": 0.10195932046175005,
+      "delta": 0.27239667744509116
+    },
+    {
+      "id": "1780077929105.0256",
+      "side": "buy",
+      "qty": 1,
+      "right": "C",
+      "expiry_dte": 7,
+      "strike_offset": 2.6781854813698778,
+      "entry": 0.065,
+      "iv": 0.0885100993812084,
+      "delta": 0.019189031060379946
+    }
+  ]
+}
