@@ -92,15 +92,15 @@
     var u = U();
     var expiryDate = u.startOfDay(u.parseDate(leg.expiry));
     var analysis = u.startOfDay(analysisDate);
-    var days = Math.max(0, u.businessDaysBetween(analysis, expiryDate));
+    var calDays = Math.max(0, (expiryDate.getTime() - analysis.getTime()) / 86400000);
     var intrinsic = leg.right === "C"
       ? Math.max(0, underlying - leg.strike)
       : Math.max(0, leg.strike - underlying);
-    if (days <= 0) { return intrinsic; }
+    if (calDays <= 0) { return intrinsic; }
     var v = V();
-    var iv = v ? v.modeledVol(leg, underlying, days, analysis, referenceSpot) : 0.2;
+    var iv = v ? v.modeledVol(leg, underlying, calDays, analysis, referenceSpot) : 0.2;
     var p = P();
-    return p ? p.blackScholes(underlying, leg.strike, days / 365, iv, leg.right) : intrinsic;
+    return p ? p.blackScholes(underlying, leg.strike, calDays / 365, iv, leg.right) : intrinsic;
   }
 
   function visibleStrikeRange(spot) {
@@ -131,11 +131,11 @@
         continue;
       }
       var expiryDate = u.startOfDay(u.parseDate(leg.expiry));
-      var days = Math.max(0, u.businessDaysBetween(analysisDate, expiryDate));
-      var tYears = Math.max(0, days / 365);
+      var calDays = Math.max(0, (expiryDate.getTime() - analysisDate.getTime()) / 86400000);
+      var tYears = Math.max(0, calDays / 365);
       if (tYears <= 0) { continue; }
       var v = V();
-      var iv = v ? v.modeledVol(leg, spot, days, analysisDate, spot) : 0.2;
+      var iv = v ? v.modeledVol(leg, spot, calDays, analysisDate, spot) : 0.2;
       var p = P();
       var greeks = p ? p.optionGreeks(spot, leg.strike, tYears, iv, leg.right) : { delta: 0, gamma: 0, vega: 0, theta: 0 };
       var sign = leg.side === "buy" ? 1 : -1;

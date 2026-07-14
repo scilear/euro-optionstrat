@@ -628,9 +628,9 @@
       }
       var legVal = C().optionValue(leg, scenSpot, analysisDate, scenSpot);
       var expiryDate = U().startOfDay(U().parseDate(leg.expiry));
-      var days = Math.max(0, U().businessDaysBetween(analysisDate, expiryDate));
-      var tYears = Math.max(0, days / 365);
-      var modeledIv = V().modeledVol(leg, scenSpot, days, analysisDate, scenSpot);
+      var calDays = Math.max(0, (expiryDate.getTime() - analysisDate.getTime()) / 86400000);
+      var tYears = Math.max(0, calDays / 365);
+      var modeledIv = V().modeledVol(leg, scenSpot, calDays, analysisDate, scenSpot);
       var stickyDebug = showStickyDebug
         ? V().stickyDeltaDebugInfo(leg, scenSpot, tYears, analysisDate, scenSpot)
         : null;
@@ -650,8 +650,8 @@
       var sampleLeg = activeLegs.find(function (l) { return (l.right || "").toUpperCase() !== "U"; });
       if (sampleLeg) {
         var ed = U().startOfDay(U().parseDate(sampleLeg.expiry));
-        var dd = Math.max(0, U().businessDaysBetween(analysisDate, ed));
-        var ty = Math.max(0, dd / 365);
+        var cd = Math.max(0, (ed.getTime() - analysisDate.getTime()) / 86400000);
+        var ty = Math.max(0, cd / 365);
         var info = V().stickyDeltaDebugInfo(sampleLeg, scenSpot, ty, analysisDate, scenSpot);
         if (info) {
           var deltaGap = Math.abs(info.targetDelta - info.nearestDelta);
