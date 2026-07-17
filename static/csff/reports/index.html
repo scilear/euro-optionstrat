@@ -1,0 +1,1826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FF Scanner — Reports</title>
+<style>
+  body  { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+          background:#0f1117;color:#e0e0e0;margin:0;padding:24px; }
+  h1,h2 { color:#fff;margin-bottom:4px; }
+  .sub  { color:#888;font-size:14px;margin-bottom:20px; }
+  table { width:100%;border-collapse:collapse;font-size:14px; }
+  th    { color:#9ca3af;font-weight:500;padding:8px 12px;text-align:left;
+          border-bottom:2px solid #2d3148;white-space:nowrap; }
+  td    { padding:8px 12px;border-bottom:1px solid #1e2130; }
+  tr:hover td { background:#1e2230; }
+  .note { color:#555;font-size:12px;margin-top:16px; }
+</style>
+</head>
+<body>
+<h1>FF Scanner</h1>
+<h2 style="color:#60a5fa;margin-bottom:2px">Latest scan: 2026-07-17</h2>
+<div class="sub">119 candidates priced &nbsp;|&nbsp;
+  <span style="color:#4ade80">3 entry-ready</span>
+  &nbsp;|&nbsp; sorted by: ready ↓ then ML score ↓
+</div>
+<table>
+  <thead>
+    <tr>
+      <th>Ticker</th><th>FF%</th><th>Put P(bigwin) ★</th><th>Straddle P(bigwin)</th><th>Status</th>
+      <th>FF qual</th><th>Composite</th>
+      <th>Put mid</th><th>Straddle mid</th><th>IV/HV</th>
+      <th>IV Rank</th><th>Front DTE</th><th>Not-ready reason</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="background:#1a3520">
+      <td><a href="2026-07-17/PINS_report.html" style="color:#60a5fa;font-weight:600">PINS</a></td>
+      <td style="color:#e0e0e0">+37.8%</td>
+      <td style="color:#f87171;font-weight:700">7%</td>
+      <td style="color:#f87171;font-weight:700">7%</td>
+      <td><span style="background:#1a4731;color:#4ade80;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">READY ✓</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">61</td>
+      <td>$0.23</td>
+      <td>$0.68</td>
+      <td>1.26×</td>
+      <td>93%</td>
+      <td>28d</td>
+      <td style="color:#6b7280;font-size:12px">—</td>
+    </tr>
+    <tr style="background:#1a3520">
+      <td><a href="2026-07-17/TTD_report.html" style="color:#60a5fa;font-weight:600">TTD</a></td>
+      <td style="color:#e0e0e0">+39.5%</td>
+      <td style="color:#f87171;font-weight:700">4%</td>
+      <td style="color:#f87171;font-weight:700">4%</td>
+      <td><span style="background:#1a4731;color:#4ade80;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">READY ✓</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">68</td>
+      <td>$0.79</td>
+      <td>$1.16</td>
+      <td>1.78×</td>
+      <td>88%</td>
+      <td>28d</td>
+      <td style="color:#6b7280;font-size:12px">—</td>
+    </tr>
+    <tr style="background:#1a3520">
+      <td><a href="2026-07-17/LZ_report.html" style="color:#60a5fa;font-weight:600">LZ</a></td>
+      <td style="color:#e0e0e0">+43.4%</td>
+      <td style="color:#f87171;font-weight:700">0%</td>
+      <td style="color:#f87171;font-weight:700">0%</td>
+      <td><span style="background:#1a4731;color:#4ade80;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">READY ✓</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">60</td>
+      <td>$0.80</td>
+      <td>$0.95</td>
+      <td>1.37×</td>
+      <td>100%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">—</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/VCYT_report.html" style="color:#60a5fa;font-weight:600">VCYT</a></td>
+      <td style="color:#e0e0e0">+94.4%</td>
+      <td style="color:#4ade80;font-weight:700">100%</td>
+      <td style="color:#4ade80;font-weight:700">100%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">68</td>
+      <td>$-3.95</td>
+      <td>$-3.05</td>
+      <td>1.46×</td>
+      <td>100%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">credit received instead of debit — likely bad quote from IB;…</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/ECPG_report.html" style="color:#60a5fa;font-weight:600">ECPG</a></td>
+      <td style="color:#e0e0e0">+52.4%</td>
+      <td style="color:#4ade80;font-weight:700">100%</td>
+      <td style="color:#4ade80;font-weight:700">100%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">75</td>
+      <td>$-2.80</td>
+      <td>$-2.65</td>
+      <td>1.41×</td>
+      <td>97%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $2.80 + back $3.40)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/GVA_report.html" style="color:#60a5fa;font-weight:600">GVA</a></td>
+      <td style="color:#e0e0e0">+56.4%</td>
+      <td style="color:#4ade80;font-weight:700">60%</td>
+      <td style="color:#4ade80;font-weight:700">60%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#4ade80">49✓</td>
+      <td>$5.75</td>
+      <td>$6.25</td>
+      <td>0.64×</td>
+      <td>82%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $1.40 + back $2.50)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/SLAB_report.html" style="color:#60a5fa;font-weight:600">SLAB</a></td>
+      <td style="color:#e0e0e0">+58.8%</td>
+      <td style="color:#f59e0b;font-weight:700">42% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td style="color:#f59e0b;font-weight:700">42% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">73</td>
+      <td>$4.60</td>
+      <td>$4.60</td>
+      <td>3.18×</td>
+      <td>24%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">unquoted legs: front put bid, front call bid, back call ask …</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/FAST_report.html" style="color:#60a5fa;font-weight:600">FAST</a></td>
+      <td style="color:#e0e0e0">+38.8%</td>
+      <td style="color:#f59e0b;font-weight:700">39%</td>
+      <td style="color:#f59e0b;font-weight:700">39%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">61</td>
+      <td>$0.38</td>
+      <td>$1.23</td>
+      <td>1.01×</td>
+      <td>0%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $0.65 + back $1.10)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/ACA_report.html" style="color:#60a5fa;font-weight:600">ACA</a></td>
+      <td style="color:#e0e0e0">+42.2%</td>
+      <td style="color:#f59e0b;font-weight:700">36%</td>
+      <td style="color:#f59e0b;font-weight:700">36%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#4ade80">55✓</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>0.53×</td>
+      <td>14%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $4.80 + back $4.80)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/SWX_report.html" style="color:#60a5fa;font-weight:600">SWX</a></td>
+      <td style="color:#e0e0e0">+91.8%</td>
+      <td style="color:#f87171;font-weight:700">35% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td style="color:#f87171;font-weight:700">35% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">71</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>1.46×</td>
+      <td>n/a</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">unquoted legs: front put bid — illiquid / market closed; wid…</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/KIE_report.html" style="color:#60a5fa;font-weight:600">KIE</a></td>
+      <td style="color:#e0e0e0">+70.8%</td>
+      <td style="color:#f87171;font-weight:700">33% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td style="color:#f87171;font-weight:700">33% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#4ade80">51✓</td>
+      <td>$-1.88</td>
+      <td>$-1.27</td>
+      <td>0.92×</td>
+      <td>100%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">unquoted legs: back put ask — illiquid / market closed; cred…</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/EVRG_report.html" style="color:#60a5fa;font-weight:600">EVRG</a></td>
+      <td style="color:#e0e0e0">+63.5%</td>
+      <td style="color:#f87171;font-weight:700">33%</td>
+      <td style="color:#f87171;font-weight:700">33%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#f59e0b">88⚠</td>
+      <td>$0.25</td>
+      <td>$0.57</td>
+      <td>1.22×</td>
+      <td>58%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $2.20 + back $3.70)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/SAFT_report.html" style="color:#60a5fa;font-weight:600">SAFT</a></td>
+      <td style="color:#e0e0e0">+66.6%</td>
+      <td style="color:#f87171;font-weight:700">32% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td style="color:#f87171;font-weight:700">32% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">61</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>1.09×</td>
+      <td>1%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">unquoted legs: front put bid, back put ask — illiquid / mark…</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/ALG_report.html" style="color:#60a5fa;font-weight:600">ALG</a></td>
+      <td style="color:#e0e0e0">+46.7%</td>
+      <td style="color:#f87171;font-weight:700">30% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td style="color:#f87171;font-weight:700">30% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">73</td>
+      <td>$-6.75</td>
+      <td>$-4.20</td>
+      <td>1.37×</td>
+      <td>100%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">unquoted legs: back put ask — illiquid / market closed; cred…</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/MSI_report.html" style="color:#60a5fa;font-weight:600">MSI</a></td>
+      <td style="color:#e0e0e0">+34.4%</td>
+      <td style="color:#f87171;font-weight:700">30%</td>
+      <td style="color:#f87171;font-weight:700">30%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">73</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>1.27×</td>
+      <td>100%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $2.10 + back $2.10)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/IPAR_report.html" style="color:#60a5fa;font-weight:600">IPAR</a></td>
+      <td style="color:#e0e0e0">+51.5%</td>
+      <td style="color:#f87171;font-weight:700">29% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td style="color:#f87171;font-weight:700">29% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#4ade80">42✓</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>0.92×</td>
+      <td>27%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">unquoted legs: front call bid, back call ask — illiquid / ma…</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/CHD_report.html" style="color:#60a5fa;font-weight:600">CHD</a></td>
+      <td style="color:#e0e0e0">+35.8%</td>
+      <td style="color:#f87171;font-weight:700">28%</td>
+      <td style="color:#f87171;font-weight:700">28%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#4ade80">56✓</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>1.08×</td>
+      <td>100%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $2.10 + back $2.10)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/MIDD_report.html" style="color:#60a5fa;font-weight:600">MIDD</a></td>
+      <td style="color:#e0e0e0">+46.9%</td>
+      <td style="color:#f87171;font-weight:700">28% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td style="color:#f87171;font-weight:700">28% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#4ade80">36✓</td>
+      <td>$8.30</td>
+      <td>$8.30</td>
+      <td>0.42×</td>
+      <td>100%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">unquoted legs: front put bid, front call bid, back call ask …</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/GWW_report.html" style="color:#60a5fa;font-weight:600">GWW</a></td>
+      <td style="color:#e0e0e0">+34.0%</td>
+      <td style="color:#f87171;font-weight:700">27%</td>
+      <td style="color:#f87171;font-weight:700">27%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#4ade80">56✓</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>1.19×</td>
+      <td>100%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $8.40 + back $8.40)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/KNTK_report.html" style="color:#60a5fa;font-weight:600">KNTK</a></td>
+      <td style="color:#e0e0e0">+42.0%</td>
+      <td style="color:#f87171;font-weight:700">26% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td style="color:#f87171;font-weight:700">26% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#4ade80">59✓</td>
+      <td>$-0.62</td>
+      <td>$0.05</td>
+      <td>1.09×</td>
+      <td>20%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">unquoted legs: back put ask — illiquid / market closed; cred…</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/J_report.html" style="color:#60a5fa;font-weight:600">J</a></td>
+      <td style="color:#e0e0e0">+86.5%</td>
+      <td style="color:#f87171;font-weight:700">26%</td>
+      <td style="color:#f87171;font-weight:700">26%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">68</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>1.61×</td>
+      <td>100%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $3.00 + back $3.00)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/PLUS_report.html" style="color:#60a5fa;font-weight:600">PLUS</a></td>
+      <td style="color:#e0e0e0">+48.2%</td>
+      <td style="color:#f87171;font-weight:700">26% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td style="color:#f87171;font-weight:700">26% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#f59e0b">83⚠</td>
+      <td>$-5.55</td>
+      <td>$-3.85</td>
+      <td>1.31×</td>
+      <td>36%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">unquoted legs: back put ask — illiquid / market closed; cred…</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/OGS_report.html" style="color:#60a5fa;font-weight:600">OGS</a></td>
+      <td style="color:#e0e0e0">+47.0%</td>
+      <td style="color:#f87171;font-weight:700">26%</td>
+      <td style="color:#f87171;font-weight:700">26%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#4ade80">56✓</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>1.18×</td>
+      <td>100%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $2.30 + back $2.30)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/AGO_report.html" style="color:#60a5fa;font-weight:600">AGO</a></td>
+      <td style="color:#e0e0e0">+40.7%</td>
+      <td style="color:#f87171;font-weight:700">25%</td>
+      <td style="color:#f87171;font-weight:700">25%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">66</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>1.15×</td>
+      <td>37%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $2.65 + back $2.65)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/ZTS_report.html" style="color:#60a5fa;font-weight:600">ZTS</a></td>
+      <td style="color:#e0e0e0">+38.0%</td>
+      <td style="color:#f87171;font-weight:700">25%</td>
+      <td style="color:#f87171;font-weight:700">25%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">79</td>
+      <td>$0.70</td>
+      <td>$1.57</td>
+      <td>1.29×</td>
+      <td>82%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $1.50 + back $1.90)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/USFD_report.html" style="color:#60a5fa;font-weight:600">USFD</a></td>
+      <td style="color:#e0e0e0">+20.7%</td>
+      <td style="color:#f87171;font-weight:700">25%</td>
+      <td style="color:#f87171;font-weight:700">25%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#4ade80">56✓</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>0.92×</td>
+      <td>100%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $2.00 + back $2.00)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/BALL_report.html" style="color:#60a5fa;font-weight:600">BALL</a></td>
+      <td style="color:#e0e0e0">+43.0%</td>
+      <td style="color:#f87171;font-weight:700">25%</td>
+      <td style="color:#f87171;font-weight:700">25%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">73</td>
+      <td>$0.55</td>
+      <td>$1.07</td>
+      <td>1.23×</td>
+      <td>100%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $0.40 + back $1.20)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/CXT_report.html" style="color:#60a5fa;font-weight:600">CXT</a></td>
+      <td style="color:#e0e0e0">+93.0%</td>
+      <td style="color:#f87171;font-weight:700">24% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td style="color:#f87171;font-weight:700">24% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#4ade80">49✓</td>
+      <td>$0.82</td>
+      <td>$1.48</td>
+      <td>1.18×</td>
+      <td>83%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">unquoted legs: front put bid — illiquid / market closed; wid…</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/OTTR_report.html" style="color:#60a5fa;font-weight:600">OTTR</a></td>
+      <td style="color:#e0e0e0">+65.4%</td>
+      <td style="color:#f87171;font-weight:700">24%</td>
+      <td style="color:#f87171;font-weight:700">24%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#f59e0b">86⚠</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>1.27×</td>
+      <td>26%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $4.85 + back $4.85)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/BJ_report.html" style="color:#60a5fa;font-weight:600">BJ</a></td>
+      <td style="color:#e0e0e0">+44.2%</td>
+      <td style="color:#f87171;font-weight:700">24%</td>
+      <td style="color:#f87171;font-weight:700">24%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#4ade80">56✓</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>1.08×</td>
+      <td>100%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $2.80 + back $2.80)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/VCTR_report.html" style="color:#60a5fa;font-weight:600">VCTR</a></td>
+      <td style="color:#e0e0e0">+42.0%</td>
+      <td style="color:#f87171;font-weight:700">24%</td>
+      <td style="color:#f87171;font-weight:700">24%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#4ade80">54✓</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>1.15×</td>
+      <td>100%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $4.00 + back $4.00)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/MCK_report.html" style="color:#60a5fa;font-weight:600">MCK</a></td>
+      <td style="color:#e0e0e0">+34.0%</td>
+      <td style="color:#f87171;font-weight:700">24%</td>
+      <td style="color:#f87171;font-weight:700">24%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#4ade80">58✓</td>
+      <td>$3.55</td>
+      <td>$15.95</td>
+      <td>0.98×</td>
+      <td>96%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $5.40 + back $9.10)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/GMED_report.html" style="color:#60a5fa;font-weight:600">GMED</a></td>
+      <td style="color:#e0e0e0">+73.4%</td>
+      <td style="color:#f87171;font-weight:700">23%</td>
+      <td style="color:#f87171;font-weight:700">23%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#4ade80">56✓</td>
+      <td>$0.50</td>
+      <td>$1.05</td>
+      <td>1.06×</td>
+      <td>100%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $2.70 + back $2.70)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/JBTM_report.html" style="color:#60a5fa;font-weight:600">JBTM</a></td>
+      <td style="color:#e0e0e0">+43.2%</td>
+      <td style="color:#f87171;font-weight:700">22% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td style="color:#f87171;font-weight:700">22% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">73</td>
+      <td>$-2.35</td>
+      <td>$-0.40</td>
+      <td>1.52×</td>
+      <td>87%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">unquoted legs: back put ask — illiquid / market closed; cred…</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/VVV_report.html" style="color:#60a5fa;font-weight:600">VVV</a></td>
+      <td style="color:#e0e0e0">+47.0%</td>
+      <td style="color:#f87171;font-weight:700">22% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td style="color:#f87171;font-weight:700">22% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">73</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>1.60×</td>
+      <td>93%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">unquoted legs: front put bid — illiquid / market closed; wid…</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/CRUS_report.html" style="color:#60a5fa;font-weight:600">CRUS</a></td>
+      <td style="color:#e0e0e0">+54.7%</td>
+      <td style="color:#f87171;font-weight:700">22%</td>
+      <td style="color:#f87171;font-weight:700">22%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">61</td>
+      <td>$1.90</td>
+      <td>$4.25</td>
+      <td>1.41×</td>
+      <td>86%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $2.60 + back $3.00)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/BMRN_report.html" style="color:#60a5fa;font-weight:600">BMRN</a></td>
+      <td style="color:#e0e0e0">+48.8%</td>
+      <td style="color:#f87171;font-weight:700">22%</td>
+      <td style="color:#f87171;font-weight:700">22%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">75</td>
+      <td>$1.10</td>
+      <td>$2.58</td>
+      <td>2.44×</td>
+      <td>98%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $2.20 + back $2.40)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/LNN_report.html" style="color:#60a5fa;font-weight:600">LNN</a></td>
+      <td style="color:#e0e0e0">+37.8%</td>
+      <td style="color:#f87171;font-weight:700">22%</td>
+      <td style="color:#f87171;font-weight:700">22%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#4ade80">60✓</td>
+      <td>$1.35</td>
+      <td>$6.35</td>
+      <td>1.09×</td>
+      <td>12%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $3.60 + back $3.50)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/ROK_report.html" style="color:#60a5fa;font-weight:600">ROK</a></td>
+      <td style="color:#e0e0e0">+42.5%</td>
+      <td style="color:#f87171;font-weight:700">21%</td>
+      <td style="color:#f87171;font-weight:700">21%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">73</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>1.20×</td>
+      <td>100%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $3.40 + back $3.40)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/DVA_report.html" style="color:#60a5fa;font-weight:600">DVA</a></td>
+      <td style="color:#e0e0e0">+42.2%</td>
+      <td style="color:#f87171;font-weight:700">21%</td>
+      <td style="color:#f87171;font-weight:700">21%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">61</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>2.23×</td>
+      <td>100%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $3.30 + back $3.30)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/KTB_report.html" style="color:#60a5fa;font-weight:600">KTB</a></td>
+      <td style="color:#e0e0e0">+35.2%</td>
+      <td style="color:#f87171;font-weight:700">21% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td style="color:#f87171;font-weight:700">21% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">61</td>
+      <td>$-3.00</td>
+      <td>$-1.85</td>
+      <td>1.42×</td>
+      <td>100%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">unquoted legs: back put ask — illiquid / market closed; cred…</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/IIPR_report.html" style="color:#60a5fa;font-weight:600">IIPR</a></td>
+      <td style="color:#e0e0e0">+41.3%</td>
+      <td style="color:#f87171;font-weight:700">20%</td>
+      <td style="color:#f87171;font-weight:700">20%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">77</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>1.71×</td>
+      <td>78%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $2.75 + back $2.75)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/ST_report.html" style="color:#60a5fa;font-weight:600">ST</a></td>
+      <td style="color:#e0e0e0">+56.0%</td>
+      <td style="color:#f87171;font-weight:700">20%</td>
+      <td style="color:#f87171;font-weight:700">20%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">76</td>
+      <td>$0.45</td>
+      <td>$1.15</td>
+      <td>1.22×</td>
+      <td>40%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $2.80 + back $2.70)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/HAE_report.html" style="color:#60a5fa;font-weight:600">HAE</a></td>
+      <td style="color:#e0e0e0">+65.7%</td>
+      <td style="color:#f87171;font-weight:700">20% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td style="color:#f87171;font-weight:700">20% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">73</td>
+      <td>$16.55</td>
+      <td>$17.35</td>
+      <td>1.54×</td>
+      <td>86%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">unquoted legs: front put bid — illiquid / market closed; wid…</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/QLYS_report.html" style="color:#60a5fa;font-weight:600">QLYS</a></td>
+      <td style="color:#e0e0e0">+42.4%</td>
+      <td style="color:#f87171;font-weight:700">20%</td>
+      <td style="color:#f87171;font-weight:700">20%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#4ade80">36✓</td>
+      <td>$2.15</td>
+      <td>$4.80</td>
+      <td>0.94×</td>
+      <td>100%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $3.70 + back $4.00)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/XLP_report.html" style="color:#60a5fa;font-weight:600">XLP</a></td>
+      <td style="color:#e0e0e0">+36.5%</td>
+      <td style="color:#f87171;font-weight:700">19%</td>
+      <td style="color:#f87171;font-weight:700">19%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#4ade80">46✓</td>
+      <td>$0.64</td>
+      <td>$1.95</td>
+      <td>0.82×</td>
+      <td>7%</td>
+      <td>28d</td>
+      <td style="color:#6b7280;font-size:12px">FF signal gone: live FF -8.4% < 16% (was 36.5% at scan)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/SNEX_report.html" style="color:#60a5fa;font-weight:600">SNEX</a></td>
+      <td style="color:#e0e0e0">+82.6%</td>
+      <td style="color:#f87171;font-weight:700">19%</td>
+      <td style="color:#f87171;font-weight:700">19%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#4ade80">36✓</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>0.79×</td>
+      <td>100%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $3.50 + back $3.50)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/MMS_report.html" style="color:#60a5fa;font-weight:600">MMS</a></td>
+      <td style="color:#e0e0e0">+60.6%</td>
+      <td style="color:#f87171;font-weight:700">19%</td>
+      <td style="color:#f87171;font-weight:700">19%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">73</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>1.28×</td>
+      <td>86%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $3.40 + back $3.40)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/CVSA_report.html" style="color:#60a5fa;font-weight:600">CVSA</a></td>
+      <td style="color:#e0e0e0">+40.9%</td>
+      <td style="color:#f87171;font-weight:700">19%</td>
+      <td style="color:#f87171;font-weight:700">19%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#4ade80">56✓</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>0.97×</td>
+      <td>100%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $2.60 + back $2.60)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/AMGN_report.html" style="color:#60a5fa;font-weight:600">AMGN</a></td>
+      <td style="color:#e0e0e0">+21.0%</td>
+      <td style="color:#f87171;font-weight:700">18%</td>
+      <td style="color:#f87171;font-weight:700">18%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">73</td>
+      <td>$6.12</td>
+      <td>$11.18</td>
+      <td>1.33×</td>
+      <td>100%</td>
+      <td>28d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $2.85 + back $3.10)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/IT_report.html" style="color:#60a5fa;font-weight:600">IT</a></td>
+      <td style="color:#e0e0e0">+20.8%</td>
+      <td style="color:#f87171;font-weight:700">17% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td style="color:#f87171;font-weight:700">17% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">63</td>
+      <td>$1.85</td>
+      <td>$-9.00</td>
+      <td>1.00×</td>
+      <td>91%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">unquoted legs: back call ask — illiquid / market closed; wid…</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/SBRA_report.html" style="color:#60a5fa;font-weight:600">SBRA</a></td>
+      <td style="color:#e0e0e0">+71.9%</td>
+      <td style="color:#f87171;font-weight:700">17%</td>
+      <td style="color:#f87171;font-weight:700">17%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">80</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>1.94×</td>
+      <td>29%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $0.55 + back $0.55)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/PTGX_report.html" style="color:#60a5fa;font-weight:600">PTGX</a></td>
+      <td style="color:#e0e0e0">+77.6%</td>
+      <td style="color:#f87171;font-weight:700">17%</td>
+      <td style="color:#f87171;font-weight:700">17%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">65</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>1.30×</td>
+      <td>16%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $4.40 + back $4.40)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/NSSC_report.html" style="color:#60a5fa;font-weight:600">NSSC</a></td>
+      <td style="color:#e0e0e0">+69.9%</td>
+      <td style="color:#f87171;font-weight:700">17% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td style="color:#f87171;font-weight:700">17% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#f59e0b">95⚠</td>
+      <td>$-1.73</td>
+      <td>$-1.32</td>
+      <td>1.78×</td>
+      <td>30%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">unquoted legs: back put ask — illiquid / market closed; cred…</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/ESAB_report.html" style="color:#60a5fa;font-weight:600">ESAB</a></td>
+      <td style="color:#e0e0e0">+41.9%</td>
+      <td style="color:#f87171;font-weight:700">17%</td>
+      <td style="color:#f87171;font-weight:700">17%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#4ade80">44✓</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>0.92×</td>
+      <td>100%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $2.50 + back $2.50)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/MATW_report.html" style="color:#60a5fa;font-weight:600">MATW</a></td>
+      <td style="color:#e0e0e0">+35.3%</td>
+      <td style="color:#f87171;font-weight:700">17% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td style="color:#f87171;font-weight:700">17% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#f59e0b">91⚠</td>
+      <td>$-3.30</td>
+      <td>$-3.25</td>
+      <td>1.71×</td>
+      <td>56%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">unquoted legs: back put ask — illiquid / market closed; cred…</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/VTRS_report.html" style="color:#60a5fa;font-weight:600">VTRS</a></td>
+      <td style="color:#e0e0e0">+87.2%</td>
+      <td style="color:#f87171;font-weight:700">16%</td>
+      <td style="color:#f87171;font-weight:700">16%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">68</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>1.36×</td>
+      <td>100%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $0.55 + back $0.55)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/EHC_report.html" style="color:#60a5fa;font-weight:600">EHC</a></td>
+      <td style="color:#e0e0e0">+35.5%</td>
+      <td style="color:#f87171;font-weight:700">16%</td>
+      <td style="color:#f87171;font-weight:700">16%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">61</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>1.40×</td>
+      <td>100%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $2.20 + back $2.20)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/GEO_report.html" style="color:#60a5fa;font-weight:600">GEO</a></td>
+      <td style="color:#e0e0e0">+20.2%</td>
+      <td style="color:#f87171;font-weight:700">16%</td>
+      <td style="color:#f87171;font-weight:700">16%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#f59e0b">95⚠</td>
+      <td>$0.53</td>
+      <td>$1.10</td>
+      <td>2.55×</td>
+      <td>60%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">FF signal gone: live FF 12.3% < 16% (was 20.2% at scan)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/XRT_report.html" style="color:#60a5fa;font-weight:600">XRT</a></td>
+      <td style="color:#e0e0e0">+63.7%</td>
+      <td style="color:#f87171;font-weight:700">16%</td>
+      <td style="color:#f87171;font-weight:700">16%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">78</td>
+      <td>$0.82</td>
+      <td>$2.10</td>
+      <td>1.32×</td>
+      <td>22%</td>
+      <td>28d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $1.15 + back $0.94)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/FLS_report.html" style="color:#60a5fa;font-weight:600">FLS</a></td>
+      <td style="color:#e0e0e0">+38.9%</td>
+      <td style="color:#f87171;font-weight:700">15%</td>
+      <td style="color:#f87171;font-weight:700">15%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#4ade80">44✓</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>1.09×</td>
+      <td>100%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $2.80 + back $2.80)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/FRPT_report.html" style="color:#60a5fa;font-weight:600">FRPT</a></td>
+      <td style="color:#e0e0e0">+49.6%</td>
+      <td style="color:#f87171;font-weight:700">14% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td style="color:#f87171;font-weight:700">14% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">64</td>
+      <td>$-0.25</td>
+      <td>$1.05</td>
+      <td>0.98×</td>
+      <td>78%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">unquoted legs: front call bid — illiquid / market closed; wi…</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/SPHR_report.html" style="color:#60a5fa;font-weight:600">SPHR</a></td>
+      <td style="color:#e0e0e0">+47.0%</td>
+      <td style="color:#f87171;font-weight:700">14%</td>
+      <td style="color:#f87171;font-weight:700">14%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#4ade80">56✓</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>1.13×</td>
+      <td>100%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $2.80 + back $2.80)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/ARMK_report.html" style="color:#60a5fa;font-weight:600">ARMK</a></td>
+      <td style="color:#e0e0e0">+37.2%</td>
+      <td style="color:#f87171;font-weight:700">14%</td>
+      <td style="color:#f87171;font-weight:700">14%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#f59e0b">83⚠</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>1.91×</td>
+      <td>61%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $0.70 + back $0.70)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/LNTH_report.html" style="color:#60a5fa;font-weight:600">LNTH</a></td>
+      <td style="color:#e0e0e0">+67.3%</td>
+      <td style="color:#f87171;font-weight:700">14%</td>
+      <td style="color:#f87171;font-weight:700">14%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">73</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>1.72×</td>
+      <td>100%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $3.70 + back $3.70)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/NX_report.html" style="color:#60a5fa;font-weight:600">NX</a></td>
+      <td style="color:#e0e0e0">+69.8%</td>
+      <td style="color:#f87171;font-weight:700">14% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td style="color:#f87171;font-weight:700">14% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#4ade80">57✓</td>
+      <td>$3.88</td>
+      <td>$4.20</td>
+      <td>1.16×</td>
+      <td>9%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">unquoted legs: front put bid, front call bid — illiquid / ma…</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/HCC_report.html" style="color:#60a5fa;font-weight:600">HCC</a></td>
+      <td style="color:#e0e0e0">+61.3%</td>
+      <td style="color:#f87171;font-weight:700">14%</td>
+      <td style="color:#f87171;font-weight:700">14%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">68</td>
+      <td>$2.05</td>
+      <td>$3.95</td>
+      <td>1.49×</td>
+      <td>100%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $1.00 + back $1.30)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/PRSU_report.html" style="color:#60a5fa;font-weight:600">PRSU</a></td>
+      <td style="color:#e0e0e0">+21.0%</td>
+      <td style="color:#f87171;font-weight:700">14%</td>
+      <td style="color:#f87171;font-weight:700">14%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">78</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>1.41×</td>
+      <td>n/a</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $4.00 + back $4.00)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/DT_report.html" style="color:#60a5fa;font-weight:600">DT</a></td>
+      <td style="color:#e0e0e0">+54.8%</td>
+      <td style="color:#f87171;font-weight:700">13%</td>
+      <td style="color:#f87171;font-weight:700">13%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">68</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>1.28×</td>
+      <td>100%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $2.75 + back $2.75)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/SWKS_report.html" style="color:#60a5fa;font-weight:600">SWKS</a></td>
+      <td style="color:#e0e0e0">+71.1%</td>
+      <td style="color:#f87171;font-weight:700">13%</td>
+      <td style="color:#f87171;font-weight:700">13%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#4ade80">53✓</td>
+      <td>$1.35</td>
+      <td>$2.60</td>
+      <td>1.60×</td>
+      <td>100%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $2.20 + back $1.70)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/LRN_report.html" style="color:#60a5fa;font-weight:600">LRN</a></td>
+      <td style="color:#e0e0e0">+92.0%</td>
+      <td style="color:#f87171;font-weight:700">13%</td>
+      <td style="color:#f87171;font-weight:700">13%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">73</td>
+      <td>$0.40</td>
+      <td>$1.15</td>
+      <td>1.86×</td>
+      <td>100%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $1.90 + back $2.30)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/ACHC_report.html" style="color:#60a5fa;font-weight:600">ACHC</a></td>
+      <td style="color:#e0e0e0">+58.2%</td>
+      <td style="color:#f87171;font-weight:700">13%</td>
+      <td style="color:#f87171;font-weight:700">13%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">66</td>
+      <td>$0.55</td>
+      <td>$1.05</td>
+      <td>1.28×</td>
+      <td>73%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $1.70 + back $1.80)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/EXTR_report.html" style="color:#60a5fa;font-weight:600">EXTR</a></td>
+      <td style="color:#e0e0e0">+45.9%</td>
+      <td style="color:#f87171;font-weight:700">13%</td>
+      <td style="color:#f87171;font-weight:700">13%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#f59e0b">91⚠</td>
+      <td>$0.53</td>
+      <td>$0.95</td>
+      <td>1.27×</td>
+      <td>67%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $1.10 + back $2.45)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/FOX_report.html" style="color:#60a5fa;font-weight:600">FOX</a></td>
+      <td style="color:#e0e0e0">+34.3%</td>
+      <td style="color:#f87171;font-weight:700">13%</td>
+      <td style="color:#f87171;font-weight:700">13%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#4ade80">51✓</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>1.14×</td>
+      <td>89%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $3.20 + back $3.20)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/ABNB_report.html" style="color:#60a5fa;font-weight:600">ABNB</a></td>
+      <td style="color:#e0e0e0">+34.8%</td>
+      <td style="color:#f87171;font-weight:700">13%</td>
+      <td style="color:#f87171;font-weight:700">13%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#f59e0b">81⚠</td>
+      <td>$3.08</td>
+      <td>$4.35</td>
+      <td>1.30×</td>
+      <td>79%</td>
+      <td>28d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $3.10 + back $0.55)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/JBLU_report.html" style="color:#60a5fa;font-weight:600">JBLU</a></td>
+      <td style="color:#e0e0e0">+36.1%</td>
+      <td style="color:#f87171;font-weight:700">12%</td>
+      <td style="color:#f87171;font-weight:700">12%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">64</td>
+      <td>$-0.04</td>
+      <td>$0.42</td>
+      <td>1.06×</td>
+      <td>10%</td>
+      <td>28d</td>
+      <td style="color:#6b7280;font-size:12px">FF signal gone: live FF -1.3% < 16% (was 36.1% at scan)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/ACIW_report.html" style="color:#60a5fa;font-weight:600">ACIW</a></td>
+      <td style="color:#e0e0e0">+70.5%</td>
+      <td style="color:#f87171;font-weight:700">12%</td>
+      <td style="color:#f87171;font-weight:700">12%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#4ade80">53✓</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>1.27×</td>
+      <td>99%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $1.35 + back $1.35)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/ROCK_report.html" style="color:#60a5fa;font-weight:600">ROCK</a></td>
+      <td style="color:#e0e0e0">+35.2%</td>
+      <td style="color:#f87171;font-weight:700">12%</td>
+      <td style="color:#f87171;font-weight:700">12%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">79</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>1.20×</td>
+      <td>12%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $3.75 + back $3.75)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/CPRI_report.html" style="color:#60a5fa;font-weight:600">CPRI</a></td>
+      <td style="color:#e0e0e0">+36.2%</td>
+      <td style="color:#f87171;font-weight:700">11%</td>
+      <td style="color:#f87171;font-weight:700">11%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">61</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>1.34×</td>
+      <td>100%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">FF signal gone: live FF 0.0% < 16% (was 36.2% at scan)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/DLX_report.html" style="color:#60a5fa;font-weight:600">DLX</a></td>
+      <td style="color:#e0e0e0">+51.0%</td>
+      <td style="color:#f87171;font-weight:700">11%</td>
+      <td style="color:#f87171;font-weight:700">11%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">66</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>1.29×</td>
+      <td>3%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $1.75 + back $1.75)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/BLFS_report.html" style="color:#60a5fa;font-weight:600">BLFS</a></td>
+      <td style="color:#e0e0e0">+35.5%</td>
+      <td style="color:#f87171;font-weight:700">10% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td style="color:#f87171;font-weight:700">10% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">68</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>1.83×</td>
+      <td>92%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">unquoted legs: front put bid — illiquid / market closed; wid…</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/CART_report.html" style="color:#60a5fa;font-weight:600">CART</a></td>
+      <td style="color:#e0e0e0">+35.4%</td>
+      <td style="color:#f87171;font-weight:700">10%</td>
+      <td style="color:#f87171;font-weight:700">10%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">68</td>
+      <td>$0.30</td>
+      <td>$0.70</td>
+      <td>1.36×</td>
+      <td>88%</td>
+      <td>28d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $1.20 + back $1.00)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/BL_report.html" style="color:#60a5fa;font-weight:600">BL</a></td>
+      <td style="color:#e0e0e0">+77.0%</td>
+      <td style="color:#f87171;font-weight:700">10% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td style="color:#f87171;font-weight:700">10% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">68</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>1.97×</td>
+      <td>100%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">unquoted legs: front put bid, back put ask — illiquid / mark…</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/AESI_report.html" style="color:#60a5fa;font-weight:600">AESI</a></td>
+      <td style="color:#e0e0e0">+20.5%</td>
+      <td style="color:#f87171;font-weight:700">10%</td>
+      <td style="color:#f87171;font-weight:700">10%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">61</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>1.35×</td>
+      <td>100%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $0.65 + back $0.65)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/USPH_report.html" style="color:#60a5fa;font-weight:600">USPH</a></td>
+      <td style="color:#e0e0e0">+81.0%</td>
+      <td style="color:#f87171;font-weight:700">9%</td>
+      <td style="color:#f87171;font-weight:700">9%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">68</td>
+      <td>$9.15</td>
+      <td>$9.30</td>
+      <td>1.27×</td>
+      <td>97%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $2.90 + back $3.60)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/DIOD_report.html" style="color:#60a5fa;font-weight:600">DIOD</a></td>
+      <td style="color:#e0e0e0">+20.3%</td>
+      <td style="color:#f87171;font-weight:700">9%</td>
+      <td style="color:#f87171;font-weight:700">9%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#4ade80">36✓</td>
+      <td>$2.15</td>
+      <td>$4.70</td>
+      <td>1.02×</td>
+      <td>93%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $3.00 + back $2.70)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/RELY_report.html" style="color:#60a5fa;font-weight:600">RELY</a></td>
+      <td style="color:#e0e0e0">+64.3%</td>
+      <td style="color:#f87171;font-weight:700">9%</td>
+      <td style="color:#f87171;font-weight:700">9%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">61</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>1.63×</td>
+      <td>100%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">FF signal gone: live FF 0.0% < 16% (was 64.3% at scan)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/BROS_report.html" style="color:#60a5fa;font-weight:600">BROS</a></td>
+      <td style="color:#e0e0e0">+44.2%</td>
+      <td style="color:#f87171;font-weight:700">9%</td>
+      <td style="color:#f87171;font-weight:700">9%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">60</td>
+      <td>$0.55</td>
+      <td>$2.25</td>
+      <td>1.19×</td>
+      <td>84%</td>
+      <td>28d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $1.90 + back $2.20)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/SBUX_report.html" style="color:#60a5fa;font-weight:600">SBUX</a></td>
+      <td style="color:#e0e0e0">+55.2%</td>
+      <td style="color:#f87171;font-weight:700">9%</td>
+      <td style="color:#f87171;font-weight:700">9%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">75</td>
+      <td>$2.40</td>
+      <td>$2.58</td>
+      <td>1.72×</td>
+      <td>80%</td>
+      <td>28d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $1.40 + back $0.80)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/GFF_report.html" style="color:#60a5fa;font-weight:600">GFF</a></td>
+      <td style="color:#e0e0e0">+61.5%</td>
+      <td style="color:#f87171;font-weight:700">9%</td>
+      <td style="color:#f87171;font-weight:700">9%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#4ade80">56✓</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>1.13×</td>
+      <td>100%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $4.85 + back $4.85)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/CPK_report.html" style="color:#60a5fa;font-weight:600">CPK</a></td>
+      <td style="color:#e0e0e0">+34.9%</td>
+      <td style="color:#f87171;font-weight:700">9%</td>
+      <td style="color:#f87171;font-weight:700">9%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#4ade80">58✓</td>
+      <td>$13.20</td>
+      <td>$12.28</td>
+      <td>0.90×</td>
+      <td>58%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $3.10 + back $3.50)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/ASTH_report.html" style="color:#60a5fa;font-weight:600">ASTH</a></td>
+      <td style="color:#e0e0e0">+20.6%</td>
+      <td style="color:#f87171;font-weight:700">8%</td>
+      <td style="color:#f87171;font-weight:700">8%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">61</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>1.50×</td>
+      <td>100%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $2.85 + back $2.85)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/FOXF_report.html" style="color:#60a5fa;font-weight:600">FOXF</a></td>
+      <td style="color:#e0e0e0">+49.6%</td>
+      <td style="color:#f87171;font-weight:700">8% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td style="color:#f87171;font-weight:700">8% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#f59e0b">91⚠</td>
+      <td>$-1.45</td>
+      <td>$-1.32</td>
+      <td>1.51×</td>
+      <td>33%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">unquoted legs: front put bid, back put ask — illiquid / mark…</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/ECHO_report.html" style="color:#60a5fa;font-weight:600">ECHO</a></td>
+      <td style="color:#e0e0e0">+38.6%</td>
+      <td style="color:#f87171;font-weight:700">8%</td>
+      <td style="color:#f87171;font-weight:700">8%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#4ade80">46✓</td>
+      <td>$2.95</td>
+      <td>$5.15</td>
+      <td>n/a</td>
+      <td>100%</td>
+      <td>28d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $2.50 + back $2.00)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/NHI_report.html" style="color:#60a5fa;font-weight:600">NHI</a></td>
+      <td style="color:#e0e0e0">+46.8%</td>
+      <td style="color:#f87171;font-weight:700">8%</td>
+      <td style="color:#f87171;font-weight:700">8%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#4ade80">59✓</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>1.10×</td>
+      <td>n/a</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $1.20 + back $1.20)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/CNH_report.html" style="color:#60a5fa;font-weight:600">CNH</a></td>
+      <td style="color:#e0e0e0">+35.9%</td>
+      <td style="color:#f87171;font-weight:700">8%</td>
+      <td style="color:#f87171;font-weight:700">8%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">78</td>
+      <td>$0.15</td>
+      <td>$0.28</td>
+      <td>1.50×</td>
+      <td>n/a</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">FF signal gone: live FF 12.3% < 16% (was 35.9% at scan)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/LYFT_report.html" style="color:#60a5fa;font-weight:600">LYFT</a></td>
+      <td style="color:#e0e0e0">+42.4%</td>
+      <td style="color:#f87171;font-weight:700">7%</td>
+      <td style="color:#f87171;font-weight:700">7%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#f59e0b">81⚠</td>
+      <td>$0.30</td>
+      <td>$0.79</td>
+      <td>1.49×</td>
+      <td>36%</td>
+      <td>28d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $1.13 + back $0.54)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/AKAM_report.html" style="color:#60a5fa;font-weight:600">AKAM</a></td>
+      <td style="color:#e0e0e0">+73.6%</td>
+      <td style="color:#f87171;font-weight:700">7%</td>
+      <td style="color:#f87171;font-weight:700">7%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">78</td>
+      <td>$2.90</td>
+      <td>$5.80</td>
+      <td>1.49×</td>
+      <td>88%</td>
+      <td>28d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $3.10 + back $2.90)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/PDFS_report.html" style="color:#60a5fa;font-weight:600">PDFS</a></td>
+      <td style="color:#e0e0e0">+38.0%</td>
+      <td style="color:#f87171;font-weight:700">7%</td>
+      <td style="color:#f87171;font-weight:700">7%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#4ade80">44✓</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>1.01×</td>
+      <td>100%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $3.30 + back $3.30)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/TWLO_report.html" style="color:#60a5fa;font-weight:600">TWLO</a></td>
+      <td style="color:#e0e0e0">+47.4%</td>
+      <td style="color:#f87171;font-weight:700">6%</td>
+      <td style="color:#f87171;font-weight:700">6%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">61</td>
+      <td>$1.75</td>
+      <td>$9.30</td>
+      <td>2.29×</td>
+      <td>100%</td>
+      <td>28d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $2.80 + back $2.30)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/TDC_report.html" style="color:#60a5fa;font-weight:600">TDC</a></td>
+      <td style="color:#e0e0e0">+42.4%</td>
+      <td style="color:#f87171;font-weight:700">6%</td>
+      <td style="color:#f87171;font-weight:700">6%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">73</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>1.30×</td>
+      <td>100%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $1.40 + back $1.40)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/DUOL_report.html" style="color:#60a5fa;font-weight:600">DUOL</a></td>
+      <td style="color:#e0e0e0">+51.7%</td>
+      <td style="color:#f87171;font-weight:700">6%</td>
+      <td style="color:#f87171;font-weight:700">6%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">73</td>
+      <td>$2.95</td>
+      <td>$6.25</td>
+      <td>1.52×</td>
+      <td>89%</td>
+      <td>28d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $2.80 + back $2.50)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/DDOG_report.html" style="color:#60a5fa;font-weight:600">DDOG</a></td>
+      <td style="color:#e0e0e0">+40.7%</td>
+      <td style="color:#f87171;font-weight:700">6%</td>
+      <td style="color:#f87171;font-weight:700">6%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">61</td>
+      <td>$6.10</td>
+      <td>$13.75</td>
+      <td>1.59×</td>
+      <td>98%</td>
+      <td>28d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $2.65 + back $1.35)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/EMR_report.html" style="color:#60a5fa;font-weight:600">EMR</a></td>
+      <td style="color:#e0e0e0">+55.8%</td>
+      <td style="color:#f87171;font-weight:700">5%</td>
+      <td style="color:#f87171;font-weight:700">5%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">68</td>
+      <td>$4.90</td>
+      <td>$5.80</td>
+      <td>1.33×</td>
+      <td>100%</td>
+      <td>28d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $2.10 + back $2.30)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/SEZL_report.html" style="color:#60a5fa;font-weight:600">SEZL</a></td>
+      <td style="color:#e0e0e0">+35.0%</td>
+      <td style="color:#f87171;font-weight:700">5%</td>
+      <td style="color:#f87171;font-weight:700">5%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">61</td>
+      <td>$4.90</td>
+      <td>$9.20</td>
+      <td>1.25×</td>
+      <td>100%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $2.60 + back $3.60)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/CC_report.html" style="color:#60a5fa;font-weight:600">CC</a></td>
+      <td style="color:#e0e0e0">+53.0%</td>
+      <td style="color:#f87171;font-weight:700">5%</td>
+      <td style="color:#f87171;font-weight:700">5%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">68</td>
+      <td>$0.53</td>
+      <td>$0.88</td>
+      <td>1.30×</td>
+      <td>59%</td>
+      <td>28d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $1.60 + back $1.75)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/RNG_report.html" style="color:#60a5fa;font-weight:600">RNG</a></td>
+      <td style="color:#e0e0e0">+35.0%</td>
+      <td style="color:#f87171;font-weight:700">5%</td>
+      <td style="color:#f87171;font-weight:700">5%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">61</td>
+      <td>$0.10</td>
+      <td>$-0.60</td>
+      <td>1.23×</td>
+      <td>87%</td>
+      <td>28d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $0.85 + back $0.85)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/VECO_report.html" style="color:#60a5fa;font-weight:600">VECO</a></td>
+      <td style="color:#e0e0e0">+53.1%</td>
+      <td style="color:#f87171;font-weight:700">4%</td>
+      <td style="color:#f87171;font-weight:700">4%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#4ade80">36✓</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>1.03×</td>
+      <td>100%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $2.60 + back $2.60)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/AXON_report.html" style="color:#60a5fa;font-weight:600">AXON</a></td>
+      <td style="color:#e0e0e0">+46.4%</td>
+      <td style="color:#f87171;font-weight:700">4%</td>
+      <td style="color:#f87171;font-weight:700">4%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#4ade80">44✓</td>
+      <td>$11.85</td>
+      <td>$25.45</td>
+      <td>1.08×</td>
+      <td>97%</td>
+      <td>28d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $7.00 + back $6.30)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/SUPN_report.html" style="color:#60a5fa;font-weight:600">SUPN</a></td>
+      <td style="color:#e0e0e0">+42.3%</td>
+      <td style="color:#f87171;font-weight:700">3%</td>
+      <td style="color:#f87171;font-weight:700">3%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">68</td>
+      <td>$4.90</td>
+      <td>$5.78</td>
+      <td>1.64×</td>
+      <td>100%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $4.00 + back $4.00)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/CAR_report.html" style="color:#60a5fa;font-weight:600">CAR</a></td>
+      <td style="color:#e0e0e0">+91.3%</td>
+      <td style="color:#f87171;font-weight:700">3%</td>
+      <td style="color:#f87171;font-weight:700">3%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#4ade80">48✓</td>
+      <td>$8.70</td>
+      <td>$12.50</td>
+      <td>1.18×</td>
+      <td>84%</td>
+      <td>28d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $10.00 + back $5.00)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/IRM_report.html" style="color:#60a5fa;font-weight:600">IRM</a></td>
+      <td style="color:#e0e0e0">+34.2%</td>
+      <td style="color:#f87171;font-weight:700">3%</td>
+      <td style="color:#f87171;font-weight:700">3%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#f59e0b">80⚠</td>
+      <td>$6.67</td>
+      <td>$9.05</td>
+      <td>1.30×</td>
+      <td>91%</td>
+      <td>28d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $2.25 + back $2.30)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/AOSL_report.html" style="color:#60a5fa;font-weight:600">AOSL</a></td>
+      <td style="color:#e0e0e0">+20.2%</td>
+      <td style="color:#f87171;font-weight:700">3%</td>
+      <td style="color:#f87171;font-weight:700">3%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#4ade80">58✓</td>
+      <td>$1.20</td>
+      <td>$2.90</td>
+      <td>1.06×</td>
+      <td>68%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $1.70 + back $1.70)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/PIPR_report.html" style="color:#60a5fa;font-weight:600">PIPR</a></td>
+      <td style="color:#e0e0e0">+42.6%</td>
+      <td style="color:#f87171;font-weight:700">2%</td>
+      <td style="color:#f87171;font-weight:700">2%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">71</td>
+      <td>$5.78</td>
+      <td>$6.00</td>
+      <td>1.00×</td>
+      <td>60%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $3.55 + back $2.60)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/WWW_report.html" style="color:#60a5fa;font-weight:600">WWW</a></td>
+      <td style="color:#e0e0e0">+48.0%</td>
+      <td style="color:#f87171;font-weight:700">2%</td>
+      <td style="color:#f87171;font-weight:700">2%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#f59e0b">95⚠</td>
+      <td>$3.83</td>
+      <td>$4.53</td>
+      <td>1.40×</td>
+      <td>64%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $0.95 + back $1.00)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/WRBY_report.html" style="color:#60a5fa;font-weight:600">WRBY</a></td>
+      <td style="color:#e0e0e0">+34.9%</td>
+      <td style="color:#f87171;font-weight:700">1%</td>
+      <td style="color:#f87171;font-weight:700">1%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">73</td>
+      <td>$2.55</td>
+      <td>$3.77</td>
+      <td>1.50×</td>
+      <td>100%</td>
+      <td>28d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $0.80 + back $0.70)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/SRPT_report.html" style="color:#60a5fa;font-weight:600">SRPT</a></td>
+      <td style="color:#e0e0e0">+47.2%</td>
+      <td style="color:#f87171;font-weight:700">1%</td>
+      <td style="color:#f87171;font-weight:700">1%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">60</td>
+      <td>$8.20</td>
+      <td>$8.70</td>
+      <td>1.20×</td>
+      <td>15%</td>
+      <td>28d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $3.20 + back $2.80)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/HIMS_report.html" style="color:#60a5fa;font-weight:600">HIMS</a></td>
+      <td style="color:#e0e0e0">+50.6%</td>
+      <td style="color:#f87171;font-weight:700">1%</td>
+      <td style="color:#f87171;font-weight:700">1%</td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">73</td>
+      <td>$0.05</td>
+      <td>$1.25</td>
+      <td>1.64×</td>
+      <td>100%</td>
+      <td>28d</td>
+      <td style="color:#6b7280;font-size:12px">wide put spread (front $2.55 + back $1.55)</td>
+    </tr>
+    <tr >
+      <td><a href="2026-07-17/CERT_report.html" style="color:#60a5fa;font-weight:600">CERT</a></td>
+      <td style="color:#e0e0e0">+59.7%</td>
+      <td style="color:#f87171;font-weight:700">0% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td style="color:#f87171;font-weight:700">0% <span style="color:#f59e0b;font-size:10px" title="Scored on Dolt EOD data — re-run intraday for live score">Dolt</span></td>
+      <td><span style="background:#1c1f2b;color:#f87171;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600">NOT READY</span></td>
+      <td style="color:#555">—</td>
+      <td style="color:#9ca3af">70</td>
+      <td>$0.00</td>
+      <td>$0.00</td>
+      <td>3.04×</td>
+      <td>73%</td>
+      <td>35d</td>
+      <td style="color:#6b7280;font-size:12px">unquoted legs: front put bid — illiquid / market closed; wid…</td>
+    </tr>
+  </tbody>
+</table>
+<p class="note">ML Win% = logistic regression (7 features, 3,813 OOS trades 2024-2025, transfer AUC 0.698 on 2020-2022). FF qual ★ = sweet spot 5-8 (57.7% win, +123% avg). Composite ⚠ = 80+ tier underperforms (48% win). ✓ = 0-60 tier outperforms (54% win). Click ticker to open full report.</p>
+
+</body>
+</html>
