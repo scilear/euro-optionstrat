@@ -154,8 +154,53 @@ class CsffService:
                 job.progress = line[len("PROGRESS:"):].strip()
         return "\n".join(lines)
 
+    def _run_subprocess_with_progress(self, job: JobState, cmd: list[str], env: dict, timeout: int) -> dict:
+        """
+        Run cmd, streaming stdout progress into job.progress, and return its outcome.
+
+        stderr is drained concurrently on a background thread. Reading stdout to EOF
+        before touching stderr (the previous approach) deadlocks as soon as the child
+        writes enough to stderr to fill the OS pipe buffer (64KB on Linux) while stdout
+        is quiet: the child blocks on the stderr write, and the parent — stuck waiting
+        on the next stdout line — never notices. proc.wait(timeout=...) is powerless
+        against this because it's only reached after the stdout read returns, so a
+        watchdog timer kills the process directly on timeout instead.
+        """
+        proc = subprocess.Popen(
+            cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, env=env,
+        )
+
+        stderr_chunks: list[str] = []
+        stderr_thread = threading.Thread(
+            target=lambda: stderr_chunks.append(proc.stderr.read()), daemon=True,
+        )
+        stderr_thread.start()
+
+        timed_out = threading.Event()
+
+        def _kill_on_timeout():
+            timed_out.set()
+            proc.kill()
+
+        watchdog = threading.Timer(timeout, _kill_on_timeout)
+        watchdog.start()
+        try:
+            stdout = self._read_progress_stream(job, proc.stdout)
+        finally:
+            watchdog.cancel()
+
+        stderr_thread.join(timeout=10)
+        stderr = stderr_chunks[0] if stderr_chunks else ""
+        returncode = proc.wait()
+
+        return {
+            "returncode": returncode,
+            "stdout": stdout,
+            "stderr": stderr,
+            "timed_out": timed_out.is_set(),
+        }
+
     def _run_universe_scan(self, job: JobState, tickers_str: str | None):
-        proc = None
         try:
             job.status = "running"
             cmd = [sys.executable or "python3", str(SCANNER_DIR / "ff_universe_scan.py")]
@@ -166,23 +211,16 @@ class CsffService:
                     cmd.extend(["--tickers"] + tickers)
             cmd.extend(["--output-dir", str(REPORTS_DIR / "universe")])
             job.progress = "starting universe scan"
-            proc = subprocess.Popen(
-                cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, env=env,
-            )
-            stdout = self._read_progress_stream(job, proc.stdout)
-            stderr = proc.stderr.read()
-            proc.wait(timeout=1800)
-            if proc.returncode != 0:
+            result = self._run_subprocess_with_progress(job, cmd, env, timeout=1800)
+            if result["timed_out"]:
                 job.status = "failed"
-                job.error = stderr.strip() or f"exit code {proc.returncode}"
+                job.error = "timed out after 1800s"
+            elif result["returncode"] != 0:
+                job.status = "failed"
+                job.error = result["stderr"].strip() or f"exit code {result['returncode']}"
             else:
                 job.status = "done"
-                job.result = {"stdout": stdout, "stderr": stderr, "exit_code": 0}
-        except subprocess.TimeoutExpired:
-            if proc:
-                proc.kill()
-            job.status = "failed"
-            job.error = "timed out after 1800s"
+                job.result = {"stdout": result["stdout"], "stderr": result["stderr"], "exit_code": 0}
         except Exception as exc:
             job.status = "failed"
             job.error = str(exc)
@@ -191,7 +229,6 @@ class CsffService:
             self._scan_lock.release()
 
     def _run_intraday_scan(self, job: JobState, tickers_str: str | None):
-        proc = None
         try:
             job.status = "running"
             universe_dir = REPORTS_DIR / "universe"
@@ -208,23 +245,16 @@ class CsffService:
                 "--reports-dir", str(REPORTS_DIR),
             ])
             job.progress = "starting intraday scan"
-            proc = subprocess.Popen(
-                cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, env=env,
-            )
-            stdout = self._read_progress_stream(job, proc.stdout)
-            stderr = proc.stderr.read()
-            proc.wait(timeout=600)
-            if proc.returncode != 0:
+            result = self._run_subprocess_with_progress(job, cmd, env, timeout=600)
+            if result["timed_out"]:
                 job.status = "failed"
-                job.error = stderr.strip() or f"exit code {proc.returncode}"
+                job.error = "timed out after 600s"
+            elif result["returncode"] != 0:
+                job.status = "failed"
+                job.error = result["stderr"].strip() or f"exit code {result['returncode']}"
             else:
                 job.status = "done"
-                job.result = {"stdout": stdout, "stderr": stderr, "exit_code": 0}
-        except subprocess.TimeoutExpired:
-            if proc:
-                proc.kill()
-            job.status = "failed"
-            job.error = "timed out after 600s"
+                job.result = {"stdout": result["stdout"], "stderr": result["stderr"], "exit_code": 0}
         except Exception as exc:
             job.status = "failed"
             job.error = str(exc)
