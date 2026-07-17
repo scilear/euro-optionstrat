@@ -161,8 +161,21 @@
   }
 
   // ── Job polling ────────────────────────────────────────────────────
+  function parseProgress(raw) {
+    const out = { pct: 0, label: '', message: '' };
+    if (!raw) return out;
+    const m = raw.match(/pct=(\d+)/);
+    if (m) out.pct = Math.min(100, Math.max(0, parseInt(m[1], 10)));
+    const lm = raw.match(/label=([^ ]+)/);
+    if (lm) out.label = lm[1];
+    const mm = raw.match(/message=(.+)/);
+    if (mm) out.message = mm[1].trim();
+    return out;
+  }
+
   function pollJob(jobId) {
     if (pollTimer) clearInterval(pollTimer);
+    let lastProgress = '';
     pollTimer = setInterval(async () => {
       const res = await api('GET', `/status?job_id=${jobId}`);
       if (!res.ok || !res.data) {
@@ -189,8 +202,14 @@
         progressFill.style.width = '0%';
         progressFill.style.background = '#f87171';
       } else {
-        progressFill.style.width = '50%';
-        updateModalLog(job.progress || 'Running...');
+        const pg = parseProgress(job.progress);
+        progressFill.style.width = `${pg.pct || 5}%`;
+        const text = pg.message || pg.label || job.progress || 'Running...';
+        // Only append to the log when the progress text changes.
+        if (text && text !== lastProgress) {
+          updateModalLog(text);
+          lastProgress = text;
+        }
       }
     }, 2000);
   }

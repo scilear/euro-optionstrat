@@ -50,6 +50,14 @@ BACK_DTE_WINDOW  = (46, 80)
 
 OUTPUT_DIR = Path(os.environ.get("CSFF_UNIVERSE_DIR", str(Path(__file__).parent / "universe")))
 
+
+def print_progress(pct: int, label: str, message: str = ""):
+    """Emit a machine-readable progress line for the web UI."""
+    line = f"PROGRESS: pct={pct} label={label}"
+    if message:
+        line += f" message={message}"
+    print(line, flush=True)
+
 KNOWN_ETFS = {
     "SPY", "QQQ", "IWM", "DIA", "XLK", "XLF", "XLE", "XLV", "XLI",
     "XLP", "XLU", "XLB", "XLRE", "GLD", "SLV", "TLT", "IEF", "HYG",
@@ -800,7 +808,7 @@ def run_scan(
     stk_conn = conn()
 
     # Find latest date with actual data (starts from today, walks back up to 10 days)
-    print(f"Finding latest options data starting from {target_date} ...", flush=True)
+    print_progress(0, "start", f"Finding latest options data from {target_date}")
     latest = find_latest_data_date(opt_conn, target_date)
     if not latest:
         print(f"ERROR: No options data found in last 10 days from {target_date}", file=sys.stderr)
@@ -825,6 +833,7 @@ def run_scan(
     print(f"  Spots: {len(spots_latest)} tickers", flush=True)
     options_latest = get_all_options_for_date(opt_conn, latest, min_iv_rows)
     print(f"  Options: {len(options_latest)} tickers", flush=True)
+    print_progress(5, "filter", f"loaded {len(options_latest)} tickers")
 
     candidates = []
     candidate_recs = {}  # {ticker: ff_record}
@@ -848,6 +857,7 @@ def run_scan(
         candidates = [t for t in candidates if t in ticker_override]
 
     print(f"  {len(candidates)} tickers pass FF >= {ff_min}%")
+    print_progress(10, "filter", f"{len(candidates)} candidates pass FF >= {ff_min}%")
     if not candidates:
         if len(options_latest) == 0:
             print(f"  ERROR: No options data in options.option_chain for {latest}", file=sys.stderr)
@@ -900,7 +910,8 @@ def run_scan(
         results[ticker].append(candidate_recs[ticker])
     skipped_empty = skipped_no_hits = 0
 
-    for d in trading_dates:
+    n_dates = len(trading_dates)
+    for i, d in enumerate(trading_dates):
         print(f"  {d} ... ", end="", flush=True)
 
         spots = get_all_spots(stk_conn, d)
@@ -944,6 +955,9 @@ def run_scan(
         else:
             print(f"{hits}/{n_found} candidates with data")
 
+        pct = 10 + int(80 * (i + 1) / max(n_dates, 1))
+        print_progress(pct, "backfill", f"{d} ({i + 1}/{n_dates})")
+
     if skipped_empty or skipped_no_hits:
         print(f"Phase 2 summary: skipped {skipped_empty} empty dates, {skipped_no_hits} dates with 0 hits", file=sys.stderr)
 
@@ -984,6 +998,7 @@ CANDIDATE_FIELDS = [
 
 
 def write_outputs(scan_result: dict, target_date: date, ff_min: float):
+    print_progress(90, "rank", "Enriching candidates")
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     date_str = target_date.isoformat()
 
@@ -1059,6 +1074,7 @@ def write_outputs(scan_result: dict, target_date: date, ff_min: float):
     print(f"Candidates (FF≥{ff_min}%): {cand_path}  [{len(candidates)} tickers]")
     print(f"Latest CSV : {latest_csv}")
     print(f"Latest JSON: {latest_json}")
+    print_progress(100, "done", f"{len(candidates)} candidates written")
 
     # Console summary — sorted by ML score, earnings-risk flagged
     if candidates:
