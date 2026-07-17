@@ -24,7 +24,7 @@ from .utils import truthy
 
 # ── CSFF module (optional — graceful degradation) ────────────────────
 try:
-    from .csff_handler import CsffHandler
+    from .csff.csff_handler import CsffHandler
     _csff = CsffHandler()
     print("[csff] CSFF module loaded", file=sys.stderr)
 except Exception as _csff_exc:
