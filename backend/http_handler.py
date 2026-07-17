@@ -22,6 +22,15 @@ from .stores import TradeStore
 from .utils import first
 from .utils import truthy
 
+# ── CSFF module (optional — graceful degradation) ────────────────────
+try:
+    from .csff_handler import CsffHandler
+    _csff = CsffHandler()
+    print("[csff] CSFF module loaded", file=sys.stderr)
+except Exception as _csff_exc:
+    _csff = None
+    print(f"[csff] CSFF module unavailable: {_csff_exc}", file=sys.stderr)
+
 
 class EuroOptionStratServer(ThreadingHTTPServer):
     """HTTP server carrying app configuration."""
@@ -92,6 +101,10 @@ class EuroOptionStratHandler(SimpleHTTPRequestHandler):
             self._handle_simulate_status(parsed.query)
             return
 
+        if parsed.path.startswith("/csff/"):
+            self._handle_csff("GET")
+            return
+
         if parsed.path == "/":
             self.path = "/index.html"
         super().do_GET()
@@ -113,6 +126,9 @@ class EuroOptionStratHandler(SimpleHTTPRequestHandler):
             return
         if parsed.path == "/api/ib-prices":
             self._handle_ib_prices()
+            return
+        if parsed.path.startswith("/csff/"):
+            self._handle_csff("POST")
             return
         self._send_json({"error": f"Unknown endpoint: {parsed.path}"}, status=404)
 
@@ -282,6 +298,27 @@ class EuroOptionStratHandler(SimpleHTTPRequestHandler):
             self._send_json({"prices": prices})
         except ChainError as exc:
             self._send_json({"error": str(exc)}, status=502)
+
+    # ── CSFF dispatch ────────────────────────────────────────────────
+
+    def _handle_csff(self, method: str) -> None:
+        if _csff is None:
+            self._send_json({"error": "csff_unavailable", "detail": "CSFF module not loaded"}, status=503)
+            return
+        body = None
+        if method == "POST":
+            content_length = int(self.headers.get("Content-Length", "0"))
+            body = self.rfile.read(content_length) if content_length > 0 else b"{}"
+        status_code, data, content_type = _csff.dispatch(method, self.path, body)
+        if content_type == "application/json":
+            self._send_json(data, status=status_code)
+        else:
+            payload = data.encode("utf-8") if isinstance(data, str) else data
+            self.send_response(status_code)
+            self.send_header("Content-Type", content_type)
+            self.send_header("Content-Length", str(len(payload)))
+            self.end_headers()
+            self.wfile.write(payload)
 
     def _send_json(self, payload: dict[str, Any], status: int = 200) -> None:
         body = json.dumps(payload, indent=2).encode("utf-8")
