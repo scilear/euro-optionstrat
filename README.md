@@ -115,6 +115,20 @@ stock/ETF ticker via yfinance.
 └── tests/                    # JS unit tests
 ```
 
+## Calendar Spread Forward Factor (CSFF / T028)
+
+CSFF is integrated into this repository. The scanner, web handler, service,
+static assets, and systemd timer units all live here:
+
+- `backend/csff/` — HTTP handler and service
+- `scanner/` — PG-backed scanner scripts
+- `static/csff/` — Frontend UI
+- `scripts/csff/` — systemd service/timer units
+
+The original research and historical code remain available in the
+[calendar-spread-forward-factor](https://github.com/scilear/calendar-spread-forward-factor)
+repository. Deployment is handled by `portfoliomonitor/scripts/deploy/setup_csff.sh`.
+
 ## License
 
 MIT
