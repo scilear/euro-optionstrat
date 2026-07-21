@@ -71,34 +71,13 @@
     });
   }
 
-  async function loadReportIndex(dateStr) {
-    reportIndex.innerHTML = '<div class="loading">Loading...</div>';
-    const res = await api('GET', `/report?date=${dateStr}`);
-    if (!res.ok || !res.data) {
-      reportIndex.innerHTML = '<div class="loading">No data for this date.</div>';
-      return;
-    }
-    const tickers = res.data.tickers || [];
-    if (!tickers.length) {
-      reportIndex.innerHTML = '<div class="loading">No ticker reports for this date.</div>';
-      return;
-    }
-    // We render a clickable list; for the full HTML we embed the index.html
-    // But better: render a simple table matching the existing index style
-    let html = `<h2 style="color:#fff;margin-bottom:12px">${dateStr}</h2>
-                <table>
-                  <thead><tr>
-                    <th>Ticker</th><th>Action</th>
-                  </tr></thead>
-                  <tbody>`;
-    for (const t of tickers) {
-      html += `<tr>
-        <td><a class="ticker-link" onclick="window.CSFF.showTicker('${dateStr}','${t}')">${t}</a></td>
-        <td><button class="btn btn-sm" onclick="window.CSFF.refreshTicker('${t}')">Refresh</button></td>
-      </tr>`;
-    }
-    html += '</tbody></table>';
-    reportIndex.innerHTML = html;
+  function loadReportIndex(dateStr) {
+    // Point straight at the real generated index.html (ranking/readiness/scoring
+    // table from ff_trade_scanner.py) instead of rebuilding a bare table from the
+    // ticker list — that lost the ML scores, ready badges, FF quality, composite
+    // score, etc. Ticker links inside are plain relative hrefs to TICKER_report.html,
+    // which resolve correctly since this is a real src (not srcdoc).
+    reportIndex.innerHTML = `<iframe src="/csff/reports/${dateStr}/index.html"></iframe>`;
   }
 
   async function showTicker(dateStr, ticker) {

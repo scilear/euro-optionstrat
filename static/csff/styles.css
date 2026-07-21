@@ -85,7 +85,8 @@ a:hover { text-decoration: underline; }
 .report-index .ticker-link:hover { text-decoration: underline; }
 
 /* Inline report HTML inherits styles from the generated template */
-.report-detail iframe {
+.report-detail iframe,
+.report-index iframe {
   width: 100%; height: 100%; border: none; min-height: 80vh;
 }
 
