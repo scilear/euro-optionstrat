@@ -15,6 +15,11 @@ optionstrat_server.log
 chain_cache.json
 *.csv
 
+# CSFF generated data & reports
+csff_data/tickers.json
+scanner/ready_stats.json
+static/csff/reports/
+
 # Environment
 .env
 .env.local
