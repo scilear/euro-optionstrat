@@ -694,14 +694,29 @@ def load_or_run_scan(scan_file: str | None, no_ib: bool, ff_min: float) -> list[
     with open(path, newline="") as f:
         rows = list(csv.DictReader(f))
 
+    # csv.DictReader yields all-string values; downstream pricing/sorting code
+    # expects the numeric FF/IV/DTE fields as actual numbers (as scan_ticker()
+    # returns them in-memory), so cast them back on the way in.
+    def _num(v, cast):
+        try:
+            return cast(v) if v not in (None, "", "None") else None
+        except (ValueError, TypeError):
+            return None
+
     candidates = []
     for r in rows:
         try:
             ff = float(r.get("ff_pct") or 0)
-            if ff >= ff_min:
-                candidates.append(r)
         except (ValueError, TypeError):
-            pass
+            continue
+        if ff < ff_min:
+            continue
+        r["front_dte"]   = _num(r.get("front_dte"), int)
+        r["back_dte"]    = _num(r.get("back_dte"), int)
+        r["front_iv"]    = _num(r.get("front_iv"), float)
+        r["forward_vol"] = _num(r.get("forward_vol"), float)
+        r["ff_pct"]      = _num(r.get("ff_pct"), float)
+        candidates.append(r)
     return candidates
 
 
@@ -2478,13 +2493,15 @@ def main():
                 reason_str = f" [{reasons[0]}]" if reasons and not rec["entry_ready"] else ""
                 print(f"  {ticker:5s} FF={rec.get('ff_pct',0):+.1f}% debit=${rec['net_debit_unfilled']:.2f} → {status}{reason_str}")
                 # Publish this ticker's report immediately so entry-ready names are
-                # reviewable while the rest of the book is still pricing.
-                if universe:
-                    try:
-                        write_one_report(rec, args.date)
-                        write_indexes(results, args.date)
-                    except Exception as e:
-                        print(f"  {ticker:5s} report write failed: {e}", file=sys.stderr)
+                # reviewable while the rest of the book is still pricing. Not gated
+                # on `universe` — enrich_with_trend() already handles an empty/missing
+                # universe dict (ad-hoc --scan-file runs have none), just without a
+                # historical FF trend chart.
+                try:
+                    write_one_report(rec, args.date)
+                    write_indexes(results, args.date)
+                except Exception as e:
+                    print(f"  {ticker:5s} report write failed: {e}", file=sys.stderr)
             else:
                 print(f"  {ticker:5s} no data")
 
@@ -2507,7 +2524,7 @@ def main():
 
     # Reports were streamed per ticker; refresh indexes once more so the final
     # ordering reflects the complete result set.
-    if universe:
+    if results:
         write_indexes(results, args.date)
         date_dir    = REPORTS_DIR / args.date
         ready_count = sum(1 for r in results if r.get("entry_ready"))

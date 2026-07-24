@@ -28,13 +28,16 @@
           <label for="ticker-input">Tickers</label>
           <input id="ticker-input" type="text"
                  placeholder="AAPL, NVDA, AMD, MSFT, SPY, QQQ"
-                 class="ticker-input">
-          <button id="btn-save-tickers" class="btn btn-sm">Save</button>
+                 class="ticker-input"
+                 title="Comma-separated tickers. Used to scope Full Universe Scan and Intraday Scan below; has no effect on its own.">
+          <button id="btn-save-tickers" class="btn btn-sm"
+                  title="Remembers this list as your default, so it's pre-filled next time you open this page. Does not run anything.">Save</button>
         </div>
         <div class="toolbar-actions">
-          <button id="btn-scan-universe" class="btn">Full Universe Scan</button>
-          <button id="btn-scan-intraday" class="btn">Intraday Scan</button>
-          <button id="btn-refresh-all" class="btn" disabled>Refresh All</button>
+          <button id="btn-scan-universe" class="btn"
+                  title="Overnight-style scan: finds FF candidates across the whole options universe (or just the typed tickers, as a test override). Does not produce ticker reports by itself.">Full Universe Scan</button>
+          <button id="btn-scan-intraday" class="btn"
+                  title="Prices and reports. Empty box: prices every candidate from the last Full Universe Scan. With tickers typed: force-prices exactly those tickers, whether or not they're universe candidates.">Intraday Scan</button>
         </div>
       </div>
 

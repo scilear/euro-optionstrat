@@ -5,19 +5,19 @@ PG queries for report metadata.
 Runs scanner scripts as subprocesses with progress tracking via in-memory
 job state. Three independent operations with separate lock files:
   - Universe scan (ff_universe_scan.py)
-  - Intraday scan / price (ff_trade_scanner.py)
-  - Single-ticker refresh (ff_trade_scanner.py --universe <ticker-filtered temp CSV>)
+  - Intraday scan / price, bulk (ff_trade_scanner.py --universe latest_candidates.csv)
+  - Intraday scan / price, ad-hoc tickers or single-ticker refresh
+    (ff_scanner.py --tickers X --ff-min 0, then ff_trade_scanner.py --scan-file <that> --ff-min 0 —
+    bypasses the universe scan's FF-threshold filter so any typed ticker gets priced)
 """
 
 from __future__ import annotations
 
-import csv
 import json
 import os
 import re
 import subprocess
 import sys
-import tempfile
 import threading
 import time
 import uuid
@@ -230,45 +230,49 @@ class CsffService:
             job.completed_at = time.time()
             self._scan_lock.release()
 
-    def _write_filtered_universe(self, source_csv: Path, tickers: set[str]) -> Path:
+    def _run_adhoc_ff_scan(self, tickers: list[str]) -> Path | None:
         """
-        Write a temp copy of source_csv containing only the given tickers.
-
-        ff_trade_scanner.py takes its ticker scope from --universe FILE only — it has
-        no --ticker/--tickers CLI flag — so restricting a scan to specific tickers means
-        pre-filtering the candidates CSV ourselves before pointing --universe at it.
+        Compute fresh FF rows for arbitrary tickers via ff_scanner.py, bypassing the
+        overnight universe scan's FF-threshold candidate filter entirely — this is
+        what lets the UI force a report on any ticker, not just ones that already
+        cleared the universe scan's FF >= 15% cut.
+        Returns the resulting scan CSV path, or None if the subprocess failed.
         """
-        with open(source_csv, newline="") as f:
-            reader = csv.DictReader(f)
-            rows = [r for r in reader if r.get("ticker", "").strip().upper() in tickers]
-            fieldnames = reader.fieldnames
-
-        fd, tmp_path = tempfile.mkstemp(suffix="_candidates.csv", prefix="csff_filtered_")
-        with os.fdopen(fd, "w", newline="") as f:
-            writer = csv.DictWriter(f, fieldnames=fieldnames)
-            writer.writeheader()
-            writer.writerows(rows)
-        return Path(tmp_path)
+        today = date.today().isoformat()
+        cmd = [sys.executable or "python3", str(SCANNER_DIR / "ff_scanner.py"),
+               "--tickers", *tickers, "--date", today]
+        env = os.environ.copy()
+        try:
+            result = subprocess.run(cmd, capture_output=True, text=True, timeout=120, env=env)
+        except subprocess.TimeoutExpired:
+            return None
+        if result.returncode != 0:
+            return None
+        scan_path = SCANNER_DIR / "daily_scans" / f"{today}_ff_scan.csv"
+        return scan_path if scan_path.exists() else None
 
     def _run_intraday_scan(self, job: JobState, tickers_str: str | None):
-        tmp_universe_file = None
         try:
             job.status = "running"
-            universe_dir = REPORTS_DIR / "universe"
-            latest_csv = universe_dir / "latest_candidates.csv"
             cmd = [sys.executable or "python3", str(SCANNER_DIR / "ff_trade_scanner.py")]
             env = os.environ.copy()
             env["CSFF_REPORTS_DIR"] = str(REPORTS_DIR)
 
-            universe_path = latest_csv
-            if tickers_str and latest_csv.exists():
-                tickers = {t.strip().upper() for t in tickers_str.split(",") if t.strip() and TICKER_RE.match(t.strip())}
-                if tickers:
-                    tmp_universe_file = self._write_filtered_universe(latest_csv, tickers)
-                    universe_path = tmp_universe_file
-
-            if universe_path.exists():
-                cmd.extend(["--universe", str(universe_path)])
+            tickers = [t.strip().upper() for t in (tickers_str or "").split(",") if t.strip() and TICKER_RE.match(t.strip())]
+            if tickers:
+                # Ad-hoc mode: force-price exactly these tickers, regardless of
+                # whether they passed the overnight universe scan's FF filter.
+                job.progress = f"fetching fresh FF for {', '.join(tickers)}"
+                scan_path = self._run_adhoc_ff_scan(tickers)
+                if scan_path is None:
+                    job.status = "failed"
+                    job.error = f"could not fetch FF data for {', '.join(tickers)}"
+                    return
+                cmd.extend(["--scan-file", str(scan_path), "--ff-min", "0"])
+            else:
+                latest_csv = REPORTS_DIR / "universe" / "latest_candidates.csv"
+                if latest_csv.exists():
+                    cmd.extend(["--universe", str(latest_csv)])
 
             job.progress = "starting intraday scan"
             result = self._run_subprocess_with_progress(job, cmd, env, timeout=600)
@@ -285,23 +289,21 @@ class CsffService:
             job.status = "failed"
             job.error = str(exc)
         finally:
-            if tmp_universe_file:
-                tmp_universe_file.unlink(missing_ok=True)
             job.completed_at = time.time()
             self._scan_lock.release()
 
     def refresh_ticker(self, ticker: str) -> dict:
-        tmp_universe_file = None
         try:
-            latest_csv = REPORTS_DIR / "universe" / "latest_candidates.csv"
-            cmd = [sys.executable or "python3", str(SCANNER_DIR / "ff_trade_scanner.py")]
+            ticker = ticker.upper()
+            scan_path = self._run_adhoc_ff_scan([ticker])
+            if scan_path is None:
+                return {"error": f"could not fetch FF data for {ticker}"}
+            cmd = [
+                sys.executable or "python3", str(SCANNER_DIR / "ff_trade_scanner.py"),
+                "--scan-file", str(scan_path), "--ff-min", "0",
+            ]
             env = os.environ.copy()
             env["CSFF_REPORTS_DIR"] = str(REPORTS_DIR)
-            if latest_csv.exists():
-                tmp_universe_file = self._write_filtered_universe(latest_csv, {ticker.upper()})
-                cmd.extend(["--universe", str(tmp_universe_file)])
-            else:
-                return {"error": "no universe scan has run yet — run a full universe scan first"}
             result = subprocess.run(
                 cmd, capture_output=True, text=True, timeout=120, env=env,
             )
