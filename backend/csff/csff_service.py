@@ -7,8 +7,9 @@ job state. Three independent operations with separate lock files:
   - Universe scan (ff_universe_scan.py)
   - Intraday scan / price, bulk (ff_trade_scanner.py --universe latest_candidates.csv)
   - Intraday scan / price, ad-hoc tickers or single-ticker refresh
-    (ff_scanner.py --tickers X --ff-min 0, then ff_trade_scanner.py --scan-file <that> --ff-min 0 —
-    bypasses the universe scan's FF-threshold filter so any typed ticker gets priced)
+    (ff_scanner.py --tickers X, then ff_trade_scanner.py --scan-file <that> --ff-min -999 —
+    -999 rather than 0 because FF is routinely negative; bypasses the universe
+    scan's FF-threshold filter so any typed ticker gets priced regardless of sign)
 """
 
 from __future__ import annotations
@@ -268,7 +269,7 @@ class CsffService:
                     job.status = "failed"
                     job.error = f"could not fetch FF data for {', '.join(tickers)}"
                     return
-                cmd.extend(["--scan-file", str(scan_path), "--ff-min", "0"])
+                cmd.extend(["--scan-file", str(scan_path), "--ff-min", "-999"])
             else:
                 latest_csv = REPORTS_DIR / "universe" / "latest_candidates.csv"
                 if latest_csv.exists():
@@ -300,7 +301,7 @@ class CsffService:
                 return {"error": f"could not fetch FF data for {ticker}"}
             cmd = [
                 sys.executable or "python3", str(SCANNER_DIR / "ff_trade_scanner.py"),
-                "--scan-file", str(scan_path), "--ff-min", "0",
+                "--scan-file", str(scan_path), "--ff-min", "-999",
             ]
             env = os.environ.copy()
             env["CSFF_REPORTS_DIR"] = str(REPORTS_DIR)

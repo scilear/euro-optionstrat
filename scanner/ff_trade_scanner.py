@@ -2200,17 +2200,36 @@ def write_one_report(rec: dict, scan_date: str) -> Path:
 
 
 def write_indexes(results: list[dict], scan_date: str):
-    """(Re)write the per-date index and master dashboard from results so far.
-    Safe to call repeatedly — the tables sort themselves from the list given."""
+    """(Re)write the per-date index and master dashboard, merged by ticker with
+    any results already reported for this date. Without the merge, a later
+    ad-hoc/single-ticker run would overwrite the whole day's index with just
+    its own (much shorter) results list, wiping out an earlier bulk scan's
+    entries. Safe to call repeatedly."""
     if not results:
         return
     date_dir = REPORTS_DIR / scan_date
     date_dir.mkdir(parents=True, exist_ok=True)
+
+    merged_path = date_dir / "_results.json"
+    merged: dict[str, dict] = {}
+    if merged_path.exists():
+        try:
+            with open(merged_path) as f:
+                merged = {r["ticker"]: r for r in json.load(f)}
+        except (json.JSONDecodeError, OSError, KeyError):
+            merged = {}
+    for r in results:
+        merged[r["ticker"]] = r
+    all_results = list(merged.values())
+
+    with open(merged_path, "w") as f:
+        json.dump(all_results, f, default=str)
+
     (date_dir / "index.html").write_text(
-        generate_index_html(results, scan_date), encoding="utf-8"
+        generate_index_html(all_results, scan_date), encoding="utf-8"
     )
     (REPORTS_DIR / "index.html").write_text(
-        generate_master_index_html(results, scan_date), encoding="utf-8"
+        generate_master_index_html(all_results, scan_date), encoding="utf-8"
     )
 
 
